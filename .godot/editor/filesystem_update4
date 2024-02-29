@@ -10,3 +10,5 @@ res://Scenes/coin.tscn
 res://Scenes/door.tscn
 res://Scenes/cuttable_vine.tscn
 res://Scenes/dig_site.tscn
+res://Scenes/HUD.tscn
+res://Scripts/dig_site.gd

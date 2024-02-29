@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var coin_object: PackedScene = preload("res://coin.tscn")
+@export var coin_object: PackedScene = preload("res://Scenes/coin.tscn")
 @export var coins_to_spawn: int = 3
 
 signal coin_spawned

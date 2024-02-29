@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy564bg3nrhuj"]
 
-[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_dm12h"]
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_hj0fu"]
 [ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="2_ekmnn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyw3n"]
@@ -23,7 +23,7 @@ animations = [{
 
 [node name="Coin" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_dm12h")
+script = ExtResource("1_hj0fu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qyw3n")
