@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dgfti4i605p06"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_0bfgx"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_0bfgx"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_5w126"]
-[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://door.tscn" id="4_1rcum"]
-[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://player.tscn" id="4_dutnf"]
-[ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://coin.tscn" id="5_0cfbi"]
+[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/door.tscn" id="4_1rcum"]
+[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/player.tscn" id="4_dutnf"]
+[ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://Scenes/coin.tscn" id="5_0cfbi"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_0bfgx")

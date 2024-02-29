@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://tyafu3ahtbak"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_yr8x4"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_yr8x4"]
 [ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="2_f48fg"]
-[ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://HUD.tscn" id="3_spghj"]
+[ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/HUD.tscn" id="3_spghj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo6rx"]
 atlas = ExtResource("2_f48fg")

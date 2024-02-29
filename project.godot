@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Metroidvania23"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*res://global.gd"
-Hud="*res://hud.gd"
+Global="*res://Scripts/global.gd"
+Hud="*res://Scripts/hud.gd"
 
 [input]
 

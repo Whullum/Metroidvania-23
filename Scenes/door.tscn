@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cb27whjxdt6me"]
 
 [ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="1_ed3ch"]
-[ext_resource type="Script" path="res://door.gd" id="1_ycill"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_ycill"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipgw5"]
 size = Vector2(14, 14)
