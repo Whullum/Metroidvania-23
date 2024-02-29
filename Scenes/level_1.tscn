@@ -28,7 +28,7 @@ layer_0/tile_data = PackedInt32Array(917526, 1048577, 5, 917527, 1048577, 5, 917
 position = Vector2(455, 184)
 
 [node name="Door" parent="." instance=ExtResource("4_1rcum")]
-connectingScene = "res://level_2.tscn"
+connectingScene = "res://Scenes/level_2.tscn"
 
 [node name="Coins" type="Node" parent="."]
 

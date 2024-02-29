@@ -1,15 +1,19 @@
 extends CharacterBody2D
 
-@export var SPEED: float = 300.0
-@export var JUMP_VELOCITY: float = -400.0
+@export var speed: float = 250.0
+@export var jump_velocity: float = -350.0
+@export var jump_velocity_from_climb: float = -350.0
+@export var climb_velocity: float = -5.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking: bool = false
+var can_climb = false
+var is_climbing = false
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and !is_climbing:
 		velocity.y += gravity * delta
 		$PlayerSprite.play("jump")
 
@@ -17,8 +21,11 @@ func _physics_process(delta):
 		$DigHitbox/GroundPoundCollisionShape2D.disabled = true
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_climbing):
+		if is_on_floor():
+			velocity.y = jump_velocity
+		if is_climbing:
+			velocity.y = jump_velocity_from_climb
 		
 	# Handle melee attacks
 	# !! WILL NEED TO CHANGE WITH KEYFRAMES ONCE ANIMATIONS GET IN !!
@@ -54,6 +61,17 @@ func _physics_process(delta):
 	if Input.is_action_pressed("down") and is_on_floor():
 		position.y += 2
 		
+	# Handle climbing behavior
+	if (Input.is_action_just_pressed("up") or Input.is_action_just_pressed("down")) and can_climb:
+		self.velocity.y = 0
+		is_climbing = true
+		
+	if Input.is_action_pressed("up") and can_climb:
+		self.position.y += climb_velocity
+		
+	if Input.is_action_pressed("down") and can_climb:
+		self.position.y -= climb_velocity
+		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
@@ -61,13 +79,13 @@ func _physics_process(delta):
 	if !is_attacking:
 		if direction:
 			$PlayerSprite.play("run")
-			velocity.x = direction * SPEED
+			velocity.x = direction * speed
 			if direction == -1:
 				$PlayerSprite.flip_h = true
 			else:
 				$PlayerSprite.flip_h = false
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, speed)
 			$PlayerSprite.play("idle")
 		move_and_slide()
 		
@@ -87,3 +105,12 @@ func _on_watering_can_timer_timeout():
 func _on_dig_hitbox_timer_timeout():
 	$DigHitbox/CollisionShape2D.disabled = true
 	is_attacking = false
+
+func _on_interactable_hitbox_area_entered(area):
+	if area.name == "ClimbableVine":
+		can_climb = true
+
+func _on_interactable_hitbox_area_exited(area):
+	if area.name == "ClimbableVine":
+		can_climb = false
+		is_climbing = false

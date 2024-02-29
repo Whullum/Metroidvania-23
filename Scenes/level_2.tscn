@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7hm705j1pk5v"]
+[gd_scene load_steps=8 format=3 uid="uid://c7hm705j1pk5v"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_ka3wb"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="1_podoe"]
@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/door.tscn" id="4_r3hka"]
 [ext_resource type="PackedScene" uid="uid://dk6l60ti8nrsk" path="res://Scenes/cuttable_vine.tscn" id="5_t1384"]
 [ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/dig_site.tscn" id="6_i0o23"]
-[ext_resource type="Texture2D" uid="uid://cltiytb08kln3" path="res://1-Bit Platformer Pack/Tiles/Transparent/tile_0019.png" id="7_xcagm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_reiox"]
-size = Vector2(16, 72)
+[ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/watering_spot.tscn" id="7_1gie7"]
 
 [node name="Level2" type="Node2D"]
 position = Vector2(62, 20)
@@ -35,7 +32,7 @@ position = Vector2(455, 184)
 
 [node name="Door" parent="." instance=ExtResource("4_r3hka")]
 position = Vector2(554, 236)
-connectingScene = "res://level_1.tscn"
+connectingScene = "res://Scenes/level_1.tscn"
 
 [node name="CuttableVine" parent="." instance=ExtResource("5_t1384")]
 collision_layer = 11
@@ -43,16 +40,7 @@ collision_layer = 11
 [node name="DigSite" parent="." instance=ExtResource("6_i0o23")]
 coins_to_spawn = 8
 
-[node name="ClimbableVine" type="Area2D" parent="."]
-position = Vector2(370, 204)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ClimbableVine"]
-position = Vector2(0, -28)
-shape = SubResource("RectangleShape2D_reiox")
-
-[node name="Sprite2D" type="Sprite2D" parent="ClimbableVine"]
-position = Vector2(0, -28)
-scale = Vector2(1, 4.5)
-texture = ExtResource("7_xcagm")
+[node name="WateringSpot" parent="." instance=ExtResource("7_1gie7")]
+position = Vector2(362, 212)
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]

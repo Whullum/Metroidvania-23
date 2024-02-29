@@ -12,3 +12,9 @@ res://Scenes/cuttable_vine.tscn
 res://Scenes/dig_site.tscn
 res://Scenes/HUD.tscn
 res://Scripts/dig_site.gd
+res://Scenes/climbable_vine.tscn
+res://Scripts/climbable_vine.gd
+res://Scripts/player.gd
+res://Scripts/MainMenu.gd
+res://Scripts/WateringSpot.gd
+res://Scenes/watering_spot.tscn

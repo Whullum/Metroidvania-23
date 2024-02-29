@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmuklm5sd2dmq"]
+
+[ext_resource type="Script" path="res://Scripts/WateringSpot.gd" id="1_d56ct"]
+[ext_resource type="Texture2D" uid="uid://e3mrv6x25pu5" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0015.png" id="2_byuok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nj2u0"]
+size = Vector2(16, 8)
+
+[node name="WateringSpot" type="Area2D"]
+collision_layer = 33
+collision_mask = 2
+script = ExtResource("1_d56ct")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(1, 0.5)
+texture = ExtResource("2_byuok")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_nj2u0")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

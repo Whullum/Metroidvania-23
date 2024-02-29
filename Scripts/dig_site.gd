@@ -10,7 +10,7 @@ func _on_area_entered(area):
 		for i in coins_to_spawn:
 			var spawned_coin = coin_object.instantiate()
 			var spawn_position: Vector2
-			spawn_position = Vector2(position) + 20 * Vector2(cos((i + 1) * PI/(coins_to_spawn + 1)), -sin((i + 1) * PI/(coins_to_spawn + 1)))
+			spawn_position = Vector2(self.position) + 20 * Vector2(cos((i + 1) * PI/(coins_to_spawn + 1)), -sin((i + 1) * PI/(coins_to_spawn + 1)))
 			spawned_coin.position = spawn_position
 			get_parent().add_child(spawned_coin)
 			coin_spawned.emit()
