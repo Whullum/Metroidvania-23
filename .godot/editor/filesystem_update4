@@ -1,0 +1,13 @@
+res://player.tscn
+res://tiles.tres
+res://player.gd
+res://level_1.tscn
+res://MainMenu.tscn
+res://level_2.tscn
+res://HUD.tscn
+res://coin.tscn
+res://door.tscn
+res://cuttable_vine.tscn
+res://cuttable_vine.gd
+res://dig_site.tscn
+res://dig_site.gd

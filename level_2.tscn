@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7hm705j1pk5v"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_ka3wb"]
+[ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="1_podoe"]
+[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://player.tscn" id="2_rq47x"]
+[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://door.tscn" id="4_r3hka"]
+[ext_resource type="PackedScene" uid="uid://dk6l60ti8nrsk" path="res://cuttable_vine.tscn" id="5_t1384"]
+[ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://dig_site.tscn" id="6_i0o23"]
+
+[node name="Level2" type="Node2D"]
+position = Vector2(62, 20)
+script = ExtResource("1_ka3wb")
+levelNumber = 2
+
+[node name="TestLabel" type="Label" parent="."]
+offset_left = 286.0
+offset_top = 258.0
+offset_right = 340.0
+offset_bottom = 281.0
+text = "Level 2
+"
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-54, 20)
+tile_set = ExtResource("1_podoe")
+format = 2
+layer_0/tile_data = PackedInt32Array(917526, 1048577, 5, 917527, 1048577, 5, 917528, 1048577, 5, 917529, 1048577, 5, 917530, 1048577, 5, 917531, 1048577, 5, 917532, 1048577, 5, 917533, 1048577, 5, 917534, 1048577, 5, 917535, 1048577, 5, 917536, 1048577, 5, 917537, 1048577, 5, 917538, 1048577, 5, 917539, 1048577, 5, 917540, 1048577, 5, 917541, 1048577, 5, 917542, 1114113, 5, 917525, 983041, 5, 786456, 262145, 5, 786457, 327681, 5, 786458, 393217, 5, 655396, 262145, 5, 655397, 327681, 5, 655398, 393217, 5, 786473, 983041, 5, 786474, 1048577, 5, 786475, 1114113, 5)
+
+[node name="Player" parent="." instance=ExtResource("2_rq47x")]
+position = Vector2(455, 184)
+
+[node name="Door" parent="." instance=ExtResource("4_r3hka")]
+position = Vector2(554, 232)
+connectingScene = "res://level_1.tscn"
+
+[node name="CuttableVine" parent="." instance=ExtResource("5_t1384")]
+collision_layer = 11
+
+[node name="DigSite" parent="." instance=ExtResource("6_i0o23")]
+coins_to_spawn = 8
+
+[connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
