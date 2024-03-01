@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/watering_spot.tscn" id="7_1gie7"]
 
 [node name="Level2" type="Node2D"]
-position = Vector2(62, 20)
 script = ExtResource("1_ka3wb")
 levelNumber = 2
 
@@ -38,9 +37,13 @@ connectingScene = "res://Scenes/level_1.tscn"
 collision_layer = 11
 
 [node name="DigSite" parent="." instance=ExtResource("6_i0o23")]
+position = Vector2(298, 244)
 coins_to_spawn = 8
 
 [node name="WateringSpot" parent="." instance=ExtResource("7_1gie7")]
 position = Vector2(362, 212)
 
+[node name="Coins" type="Node" parent="."]
+
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
+[connection signal="coin_spawned" from="DigSite" to="." method="_on_dig_site_coin_spawned"]

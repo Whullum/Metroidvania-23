@@ -4,8 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="2_f48fg"]
 [ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/HUD.tscn" id="3_spghj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kcpe"]
+radius = 6.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
 radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekpk"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqcd"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
+size = Vector2(10, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvyi"]
+size = Vector2(13, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo6rx"]
 atlas = ExtResource("2_f48fg")
@@ -65,65 +80,33 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7kcpe"]
-radius = 6.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqcd"]
-size = Vector2(10, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekpk"]
-size = Vector2(20, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
-size = Vector2(10, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvyi"]
-size = Vector2(13, 8)
-
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 69
 script = ExtResource("1_yr8x4")
+jump_velocity_from_climb = -200.0
 
-[node name="InteractableHitbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableHitbox"]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_dn5aj")
-
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_g10vl")
-animation = &"idle"
-offset = Vector2(0, 1.5)
-
-[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 scale = Vector2(0.77, 0.77)
 shape = SubResource("CircleShape2D_7kcpe")
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-process_callback = 0
-position_smoothing_enabled = true
-drag_vertical_enabled = true
-
-[node name="CameraTransform" type="RemoteTransform2D" parent="."]
-remote_path = NodePath("../PlayerCamera")
-
-[node name="HUD" parent="." instance=ExtResource("3_spghj")]
-
-[node name="WateringCanHitbox" type="Area2D" parent="."]
+[node name="PlayerHitbox" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 36
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCanHitbox"]
-position = Vector2(10, 3)
-shape = SubResource("RectangleShape2D_2vqcd")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+position = Vector2(0, 4)
+scale = Vector2(0.77, 0.77)
+shape = SubResource("CircleShape2D_7kcpe")
 
-[node name="WateringCanTimer" type="Timer" parent="WateringCanHitbox"]
-process_callback = 0
-wait_time = 0.3
+[node name="InteractableHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableHitbox"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dn5aj")
 
 [node name="MeleeHitbox" type="Area2D" parent="."]
 collision_layer = 2
@@ -137,6 +120,19 @@ disabled = true
 [node name="MeleeHitboxTimer" type="Timer" parent="MeleeHitbox"]
 process_callback = 0
 wait_time = 0.2
+
+[node name="WateringCanHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 36
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCanHitbox"]
+position = Vector2(10, 3)
+shape = SubResource("RectangleShape2D_2vqcd")
+disabled = true
+
+[node name="WateringCanTimer" type="Timer" parent="WateringCanHitbox"]
+process_callback = 0
+wait_time = 0.3
 
 [node name="DigHitbox" type="Area2D" parent="."]
 collision_layer = 2
@@ -156,8 +152,24 @@ disabled = true
 process_callback = 0
 wait_time = 0.7
 
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_g10vl")
+animation = &"idle"
+offset = Vector2(0, 1.5)
+
+[node name="PlayerCamera" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+process_callback = 0
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+
+[node name="CameraTransform" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../PlayerCamera")
+
+[node name="HUD" parent="." instance=ExtResource("3_spghj")]
+
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]
 [connection signal="area_exited" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_exited"]
-[connection signal="timeout" from="WateringCanHitbox/WateringCanTimer" to="." method="_on_watering_can_timer_timeout"]
 [connection signal="timeout" from="MeleeHitbox/MeleeHitboxTimer" to="." method="_on_melee_hitbox_timer_timeout"]
+[connection signal="timeout" from="WateringCanHitbox/WateringCanTimer" to="." method="_on_watering_can_timer_timeout"]
 [connection signal="timeout" from="DigHitbox/DigHitboxTimer" to="." method="_on_dig_hitbox_timer_timeout"]

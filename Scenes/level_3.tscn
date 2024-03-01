@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://canrgcutfltso"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_d0ueb"]
+[ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_kckvr"]
+[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/player.tscn" id="3_nufwq"]
+[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/door.tscn" id="4_eosgp"]
+[ext_resource type="PackedScene" uid="uid://ct0ymg0e2dgvf" path="res://Scenes/patrol_enemy.tscn" id="5_duqet"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_d0ueb")
+levelNumber = 2
+
+[node name="TestLabel" type="Label" parent="."]
+offset_left = 286.0
+offset_top = 258.0
+offset_right = 340.0
+offset_bottom = 281.0
+text = "Level 2
+"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_kckvr")
+format = 2
+layer_0/tile_data = PackedInt32Array(917526, 1048577, 5, 917527, 1048577, 5, 917528, 1048577, 5, 917529, 1048577, 5, 917530, 1048577, 5, 917531, 1048577, 5, 917532, 1048577, 5, 917533, 1048577, 5, 917534, 1048577, 5, 917535, 1048577, 5, 917536, 1048577, 5, 917537, 1048577, 5, 917538, 1048577, 5, 917539, 1048577, 5, 917540, 1048577, 5, 917541, 1048577, 5, 917542, 1114113, 5, 917525, 1048577, 5, 786456, 262145, 5, 786457, 327681, 5, 786458, 393217, 5, 655396, 262145, 5, 655397, 327681, 5, 655398, 393217, 5, 786473, 983041, 5, 786474, 1048577, 5, 786475, 1114113, 5, 917524, 1048577, 5, 917523, 1048577, 5, 917522, 1048577, 5, 917521, 1048577, 5, 917520, 1048577, 5, 917519, 1048577, 5, 917518, 1048577, 5, 917517, 1048577, 5, 917516, 1048577, 5, 917515, 1048577, 5, 917514, 1048577, 5, 917513, 1048577, 5, 917512, 983041, 5, 589833, 262145, 5, 589834, 327681, 5, 589835, 393217, 5, 458770, 262145, 5, 458771, 327681, 5, 458772, 393217, 5)
+
+[node name="Player" parent="." instance=ExtResource("3_nufwq")]
+position = Vector2(455, 184)
+
+[node name="Door" parent="." instance=ExtResource("4_eosgp")]
+position = Vector2(554, 236)
+connectingScene = "res://Scenes/level_1.tscn"
+
+[node name="PatrolEnemy" parent="." instance=ExtResource("5_duqet")]
+position = Vector2(208, 224)
+speed = 25.0
+
+[connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
