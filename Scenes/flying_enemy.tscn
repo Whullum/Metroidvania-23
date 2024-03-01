@@ -1,30 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct0ymg0e2dgvf"]
+[gd_scene load_steps=5 format=3 uid="uid://feq17rj8byk4"]
 
-[ext_resource type="Script" path="res://Scripts/patrol_enemy.gd" id="1_s74vl"]
-[ext_resource type="Texture2D" uid="uid://bwsjfh3sthemg" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png" id="1_w6447"]
+[ext_resource type="Script" path="res://Scripts/patrol_enemy.gd" id="1_gey5p"]
+[ext_resource type="Texture2D" uid="uid://c6yklfdygf3p2" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0381.png" id="2_tuk40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atx5v"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvexp"]
-size = Vector2(24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vy5g"]
+radius = 64.1249
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjy16"]
-size = Vector2(256, 24)
-
-[node name="PatrolEnemy" type="CharacterBody2D"]
+[node name="FlyingEnemy" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_s74vl")
+script = ExtResource("1_gey5p")
 maximum_patrol_distance = 300.0
+is_in_air = true
 speed = 20.0
 health = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.38419e-07, -8)
-texture = ExtResource("1_w6447")
-
-[node name="CollisionHitbox" type="CollisionShape2D" parent="."]
+[node name="EnemyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_atx5v")
 
@@ -34,7 +28,7 @@ collision_mask = 2
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyDamageHitbox"]
 position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_dvexp")
+shape = SubResource("RectangleShape2D_atx5v")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -42,9 +36,14 @@ collision_mask = 2
 
 [node name="DetectionHitbox" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_qjy16")
+shape = SubResource("CircleShape2D_8vy5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -8)
+texture = ExtResource("2_tuk40")
 
 [connection signal="area_entered" from="EnemyDamageHitbox" to="." method="_on_enemy_damage_hitbox_area_entered"]
 [connection signal="area_exited" from="EnemyDamageHitbox" to="." method="_on_enemy_damage_hitbox_area_exited"]
+[connection signal="body_entered" from="EnemyDamageHitbox" to="." method="_on_enemy_damage_hitbox_body_entered"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]

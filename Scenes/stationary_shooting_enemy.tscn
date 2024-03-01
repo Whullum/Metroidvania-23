@@ -1,30 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct0ymg0e2dgvf"]
+[gd_scene load_steps=6 format=3 uid="uid://b3m1v7ukjerub"]
 
-[ext_resource type="Script" path="res://Scripts/patrol_enemy.gd" id="1_s74vl"]
-[ext_resource type="Texture2D" uid="uid://bwsjfh3sthemg" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png" id="1_w6447"]
+[ext_resource type="Script" path="res://Scripts/stationary_shooting_enemy.gd" id="1_gje8k"]
+[ext_resource type="Texture2D" uid="uid://bwsjfh3sthemg" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png" id="2_ff3k2"]
+[ext_resource type="PackedScene" uid="uid://d08a5f4pckurq" path="res://Scenes/enemy_bullet.tscn" id="2_vyc4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atx5v"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvexp"]
-size = Vector2(24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_f2l1k"]
+radius = 100.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjy16"]
-size = Vector2(256, 24)
-
-[node name="PatrolEnemy" type="CharacterBody2D"]
+[node name="StationaryShootingEnemy" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 2
-script = ExtResource("1_s74vl")
-maximum_patrol_distance = 300.0
-speed = 20.0
-health = 2
+collision_mask = 42
+script = ExtResource("1_gje8k")
+bullet_object = ExtResource("2_vyc4p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, -8)
-texture = ExtResource("1_w6447")
+texture = ExtResource("2_ff3k2")
 
-[node name="CollisionHitbox" type="CollisionShape2D" parent="."]
+[node name="BulletOrigin" type="Node2D" parent="."]
+position = Vector2(0, -16)
+
+[node name="EnemyHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_atx5v")
 
@@ -34,7 +33,7 @@ collision_mask = 2
 
 [node name="EnemyHitbox" type="CollisionShape2D" parent="EnemyDamageHitbox"]
 position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_dvexp")
+shape = SubResource("RectangleShape2D_atx5v")
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -42,9 +41,14 @@ collision_mask = 2
 
 [node name="DetectionHitbox" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_qjy16")
+shape = SubResource("CircleShape2D_f2l1k")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 2.0
 
 [connection signal="area_entered" from="EnemyDamageHitbox" to="." method="_on_enemy_damage_hitbox_area_entered"]
 [connection signal="area_exited" from="EnemyDamageHitbox" to="." method="_on_enemy_damage_hitbox_area_exited"]
 [connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
 [connection signal="area_exited" from="DetectionArea" to="." method="_on_detection_area_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

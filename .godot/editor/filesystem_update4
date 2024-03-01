@@ -16,3 +16,9 @@ res://Scenes/patrol_enemy.tscn
 res://Scripts/patrol_enemy.gd
 res://Scripts/enemy_base.gd
 res://Scenes/watering_spot.tscn
+res://Scripts/player.gd
+res://Scenes/stationary_shooting_enemy.tscn
+res://Scripts/stationary_shooting_enemy.gd
+res://Scenes/enemy_bullet.tscn
+res://Scripts/enemy_bullet.gd
+res://Scenes/flying_enemy.tscn

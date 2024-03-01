@@ -4,6 +4,11 @@ extends CharacterBody2D
 @export var jump_velocity: float = -350.0
 @export var jump_velocity_from_climb: float = -350.0
 @export var climb_velocity: float = -5.0
+@export var bounce_magnitude: float = -2.0
+@export var bounce_height: float = 300.0
+@export var knockback_magnitude: float = -300
+@export var velocity_x_clamp: float = 300.0
+@export var velocity_y_clamp: float = 400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -17,8 +22,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		$PlayerSprite.play("jump")
 
-	if is_on_floor():
-		$DigHitbox/GroundPoundCollisionShape2D.disabled = true
+	if is_on_floor() and !$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled:
+		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = true
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_climbing):
@@ -29,7 +34,7 @@ func _physics_process(delta):
 		
 	# Handle melee attacks
 	# !! WILL NEED TO CHANGE WITH KEYFRAMES ONCE ANIMATIONS GET IN !!
-	if Input.is_action_just_pressed("melee_attack") and is_on_floor():
+	if Input.is_action_just_pressed("melee_attack"): #and is_on_floor():
 		$MeleeHitbox/CollisionShape2D.disabled = false
 		is_attacking = true
 		$MeleeHitbox/MeleeHitboxTimer.start()
@@ -48,7 +53,7 @@ func _physics_process(delta):
 		
 	# Handle ground pound action
 	if Input.is_action_just_pressed("dig_action") and !is_on_floor():
-		$DigHitbox/GroundPoundCollisionShape2D.disabled = false
+		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = false
 	
 	# Ground Pound behavior psudocode
 	# func _on_groundpound_body_collide_with_enemy():
@@ -93,6 +98,12 @@ func _physics_process(delta):
 		$WateringCanHitbox.scale.x = sign(velocity.x)
 		$MeleeHitbox.scale.x = sign(velocity.x)
 		$DigHitbox.scale.x = sign(velocity.x)
+		
+	if abs(velocity.x) > velocity_x_clamp:
+		velocity.x = velocity_x_clamp * sign(velocity.x)
+		
+	if abs(velocity.y) > velocity_y_clamp:
+		velocity.y = velocity_y_clamp * sign(velocity.y)
 
 func _on_melee_hitbox_timer_timeout():
 	$MeleeHitbox/CollisionShape2D.disabled = true
@@ -114,3 +125,18 @@ func _on_interactable_hitbox_area_exited(area):
 	if area.name == "ClimbableVine":
 		can_climb = false
 		is_climbing = false
+
+# Handle Pogo behavior with ground pound attacks
+func _on_ground_pound_hitbox_area_entered(area):
+	var bounce_velocity: Vector2
+	bounce_velocity = global_position + area.global_position
+	bounce_velocity.normalized()
+	velocity += Vector2(bounce_velocity.x * sign(velocity.x), bounce_height) * bounce_magnitude
+	move_and_slide()
+	pass # Replace with function body.
+
+func _on_player_hitbox_area_entered(area):
+	print_debug("colliding with: " + area.name)
+	velocity = -global_position.direction_to(area.position) * knockback_magnitude
+	move_and_slide()
+	pass # Replace with function body.

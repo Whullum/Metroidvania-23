@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/global.gd"
 Hud="*res://Scripts/hud.gd"
 
+[editor]
+
+movie_writer/movie_file="F:/Projects/Godot/Metroidvania23/Screenshots and recordings/enemies.avi"
+
 [input]
 
 returnToMainMenu={

@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d08a5f4pckurq"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_qy42c"]
+[ext_resource type="Texture2D" uid="uid://d33o2cojedaa8" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0022.png" id="2_nl4o0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsmyo"]
+radius = 8.0
+
+[node name="Enemy_Bullet" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 256
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_qy42c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nl4o0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_wsmyo")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wsmyo")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

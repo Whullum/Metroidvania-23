@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/HUD.tscn" id="3_spghj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kcpe"]
-radius = 6.0
+radius = 6.49351
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
 radius = 6.0
@@ -16,11 +16,11 @@ size = Vector2(20, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqcd"]
 size = Vector2(10, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
-size = Vector2(10, 14)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvyi"]
 size = Vector2(13, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
+size = Vector2(10, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uo6rx"]
 atlas = ExtResource("2_f48fg")
@@ -82,7 +82,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 69
+collision_mask = 325
 script = ExtResource("1_yr8x4")
 jump_velocity_from_climb = -200.0
 
@@ -92,11 +92,11 @@ scale = Vector2(0.77, 0.77)
 shape = SubResource("CircleShape2D_7kcpe")
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
+position = Vector2(0, 4)
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
-position = Vector2(0, 4)
 scale = Vector2(0.77, 0.77)
 shape = SubResource("CircleShape2D_7kcpe")
 
@@ -138,11 +138,6 @@ wait_time = 0.3
 collision_layer = 2
 collision_mask = 20
 
-[node name="GroundPoundCollisionShape2D" type="CollisionShape2D" parent="DigHitbox"]
-position = Vector2(0, 16)
-shape = SubResource("RectangleShape2D_abw1c")
-disabled = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DigHitbox"]
 position = Vector2(11.5, 4)
 shape = SubResource("RectangleShape2D_6fvyi")
@@ -151,6 +146,15 @@ disabled = true
 [node name="DigHitboxTimer" type="Timer" parent="DigHitbox"]
 process_callback = 0
 wait_time = 0.7
+
+[node name="GroundPoundHitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="GroundPoundCollisionShape2D" type="CollisionShape2D" parent="GroundPoundHitbox"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_abw1c")
+disabled = true
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g10vl")
@@ -168,8 +172,10 @@ remote_path = NodePath("../PlayerCamera")
 
 [node name="HUD" parent="." instance=ExtResource("3_spghj")]
 
+[connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]
 [connection signal="area_exited" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_exited"]
 [connection signal="timeout" from="MeleeHitbox/MeleeHitboxTimer" to="." method="_on_melee_hitbox_timer_timeout"]
 [connection signal="timeout" from="WateringCanHitbox/WateringCanTimer" to="." method="_on_watering_can_timer_timeout"]
 [connection signal="timeout" from="DigHitbox/DigHitboxTimer" to="." method="_on_dig_hitbox_timer_timeout"]
+[connection signal="area_entered" from="GroundPoundHitbox" to="." method="_on_ground_pound_hitbox_area_entered"]
