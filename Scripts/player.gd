@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 250.0
 @export var jump_velocity: float = -350.0
+@export var jump_velocity_double: float = -300.0
 @export var jump_velocity_from_climb: float = -350.0
 @export var climb_velocity: float = -5.0
 @export var bounce_magnitude: float = -2.0
@@ -15,6 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking: bool = false
 var can_climb = false
 var is_climbing = false
+var has_double_jump = true
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -24,13 +26,27 @@ func _physics_process(delta):
 
 	if is_on_floor() and !$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled:
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = true
+		
+	if is_on_floor() or is_climbing:
+		has_double_jump = true
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_climbing):
-		if is_on_floor():
-			velocity.y = jump_velocity
 		if is_climbing:
 			velocity.y = jump_velocity_from_climb
+		if is_on_floor():
+			velocity.y = jump_velocity
+	
+	if Input.is_action_just_pressed("jump") and !is_on_floor():
+		if has_double_jump:
+			velocity.y = jump_velocity_double
+			has_double_jump = false
+			pass
+		pass
+	
+	if Input.is_action_just_released("jump"):
+		velocity.y = velocity.y / 2
+		pass
 		
 	# Handle melee attacks
 	# !! WILL NEED TO CHANGE WITH KEYFRAMES ONCE ANIMATIONS GET IN !!
@@ -54,11 +70,6 @@ func _physics_process(delta):
 	# Handle ground pound action
 	if Input.is_action_just_pressed("dig_action") and !is_on_floor():
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = false
-	
-	# Ground Pound behavior psudocode
-	# func _on_groundpound_body_collide_with_enemy():
-	# 	apply a force in the opposide vector direction of player to bounce them off
-	# 	weight the force more in the up (positive y) direction
 	# 	perhaps add a damage multiplier for every enemy hit while ground pounding
 	
 	# Handle moving through one way platforms
@@ -92,7 +103,14 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			$PlayerSprite.play("idle")
+		
 		move_and_slide()
+	pass
+	
+	if is_attacking and !is_on_floor():
+		move_and_slide()
+	
+	
 		
 	if (Input.is_action_pressed("left") or Input.is_action_pressed("right")) and direction != 0:
 		$WateringCanHitbox.scale.x = sign(velocity.x)

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709311688
+::res://::1709489079
 icon.svg::CompressedTexture2D::5339630627178591244::1709233525::1709233549::1::::<><>::
 tiles.tres::TileSet::7986336785858186905::1709301578::0::1::::<><>::uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
 ::res://1-Bit Platformer Pack/::1709233525
@@ -815,34 +815,36 @@ tile_0396.png::CompressedTexture2D::6044321024672048543::1709233525::1709233525:
 tile_0397.png::CompressedTexture2D::3835978982234546051::1709233525::1709233525::1::::<><>::
 tile_0398.png::CompressedTexture2D::688104536673644964::1709233525::1709233525::1::::<><>::
 tile_0399.png::CompressedTexture2D::8026130519955400360::1709233525::1709233525::1::::<><>::
-::res://Scenes/::1709312691
+::res://Scenes/::1709322722
 climbable_vine.tscn::PackedScene::362254436631561991::1709240427::0::1::::<><>::uid://cltiytb08kln3::::res://1-Bit Platformer Pack/Tiles/Transparent/tile_0019.png<>res://Scripts/climbable_vine.gd
 coin.tscn::PackedScene::6521239025202192805::1709303856::0::1::::<><>::res://Scripts/coin.gd<>uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
 cuttable_vine.tscn::PackedScene::7925870787210114154::1709240427::0::1::::<><>::res://Scripts/cuttable_vine.gd<>uid://bs0ykrh1xfne2::::res://1-Bit Platformer Pack/Tiles/Default/tile_0035.png
 dig_site.tscn::PackedScene::7673818375243370893::1709305947::0::1::::<><>::res://Scripts/dig_site.gd<>uid://brmp7d5lrrl5e::::res://1-Bit Platformer Pack/Tiles/Default/tile_0013.png
 door.tscn::PackedScene::4900751024234780544::1709240427::0::1::::<><>::uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png<>res://Scripts/door.gd
+enemy_bullet.tscn::PackedScene::8982161489831931826::1709317376::0::1::::<><>::res://Scripts/enemy_bullet.gd<>uid://d33o2cojedaa8::::res://1-Bit Platformer Pack/Tiles/Default/tile_0022.png
+flying_enemy.tscn::PackedScene::360221339194156745::1709322722::0::1::::<><>::res://Scripts/patrol_enemy.gd<>uid://c6yklfdygf3p2::::res://1-Bit Platformer Pack/Tiles/Default/tile_0381.png
 HUD.tscn::PackedScene::4455202040957479608::1709240427::0::1::::<><>::
-level_1.tscn::PackedScene::7591886447870291725::1709312416::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cy564bg3nrhuj::::res://Scenes/coin.tscn
-level_2.tscn::PackedScene::7034122117271962865::1709312417::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://dk6l60ti8nrsk::::res://Scenes/cuttable_vine.tscn<>uid://dhliwxuxmyhib::::res://Scenes/dig_site.tscn<>uid://cmuklm5sd2dmq::::res://Scenes/watering_spot.tscn
-level_3.tscn::PackedScene::4800721318642636742::1709312687::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://ct0ymg0e2dgvf::::res://Scenes/patrol_enemy.tscn<>uid://b3m1v7ukjerub::::res://Scenes/stationary_shooting_enemy.tscn
-MainMenu.tscn::PackedScene::7657205038890020597::1709312416::0::1::::<><>::res://Scripts/MainMenu.gd
-player.tscn::PackedScene::1383143117921203222::1709312417::0::1::::<><>::res://Scripts/player.gd<>uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png<>uid://b4qer54qbw4f1::::res://Scenes/HUD.tscn
-patrol_enemy.tscn::PackedScene::6159517831691725295::1709312417::0::1::::<><>::res://Scripts/patrol_enemy.gd<>uid://bwsjfh3sthemg::::res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png
-enemy_bullet.tscn::PackedScene::8982161489831931826::1709312903::0::1::::<><>::res://Scripts/coin.gd<>uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
-stationary_shooting_enemy.tscn::PackedScene::4378098694200507741::1709312881::0::1::::<><>::res://Scripts/stationary_shooting_enemy.gd<>uid://bwsjfh3sthemg::::res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png
+level_1.tscn::PackedScene::7591886447870291725::1709322721::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cy564bg3nrhuj::::res://Scenes/coin.tscn
+level_2.tscn::PackedScene::7034122117271962865::1709322721::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://dk6l60ti8nrsk::::res://Scenes/cuttable_vine.tscn<>uid://dhliwxuxmyhib::::res://Scenes/dig_site.tscn<>uid://cmuklm5sd2dmq::::res://Scenes/watering_spot.tscn
+level_3.tscn::PackedScene::4800721318642636742::1709322721::0::1::::<><>::res://Scripts/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/door.tscn<>uid://ct0ymg0e2dgvf::::res://Scenes/patrol_enemy.tscn<>uid://feq17rj8byk4::::res://Scenes/flying_enemy.tscn<>uid://b3m1v7ukjerub::::res://Scenes/stationary_shooting_enemy.tscn
+MainMenu.tscn::PackedScene::7657205038890020597::1709322721::0::1::::<><>::res://Scripts/MainMenu.gd
+patrol_enemy.tscn::PackedScene::6159517831691725295::1709322722::0::1::::<><>::res://Scripts/patrol_enemy.gd<>uid://bwsjfh3sthemg::::res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png
+player.tscn::PackedScene::1383143117921203222::1709322722::0::1::::<><>::res://Scripts/player.gd<>uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png<>uid://b4qer54qbw4f1::::res://Scenes/HUD.tscn
+stationary_shooting_enemy.tscn::PackedScene::4378098694200507741::1709322722::0::1::::<><>::res://Scripts/stationary_shooting_enemy.gd<>uid://bwsjfh3sthemg::::res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png<>uid://d08a5f4pckurq::::res://Scenes/enemy_bullet.tscn
 watering_spot.tscn::PackedScene::5657022537231650684::1709312417::0::1::::<><>::res://Scripts/WateringSpot.gd<>uid://e3mrv6x25pu5::::res://1-Bit Platformer Pack/Tiles/Default/tile_0015.png
-::res://Scripts/::1709312621
+::res://Scripts/::1709322714
 climbable_vine.gd::GDScript::-1::1709303776::0::1::::<>Area2D<>::
 coin.gd::GDScript::-1::1709303939::0::1::::<>Area2D<>::
 cuttable_vine.gd::GDScript::-1::1709233525::0::1::::<>Area2D<>::
 dig_site.gd::GDScript::-1::1709305944::0::1::::<>Area2D<>::
 door.gd::GDScript::-1::1709303961::0::1::::<>Area2D<>::
+enemy_base.gd::GDScript::-1::1709312599::0::1::::EnemyBase<>CharacterBody2D<>::
+enemy_bullet.gd::GDScript::-1::1709317364::0::1::::<>CharacterBody2D<>::
 global.gd::GDScript::-1::1709233525::0::1::::<>Node<>::
 hud.gd::GDScript::-1::1709239297::0::1::::<>Node<>::
-level.gd::GDScript::-1::1709302775::0::1::::<>Node2D<>::
+level.gd::GDScript::-1::1709319020::0::1::::<>Node2D<>::
 MainMenu.gd::GDScript::-1::1709234549::0::1::::<>Node2D<>::
-player.gd::GDScript::-1::1709312414::0::1::::<>CharacterBody2D<>::
-patrol_enemy.gd::GDScript::-1::1709312594::0::1::::<>EnemyBase<>::
-enemy_base.gd::GDScript::-1::1709312599::0::1::::EnemyBase<>CharacterBody2D<>::
-stationary_shooting_enemy.gd::GDScript::-1::1709312881::0::1::::<>EnemyBase<>::
+patrol_enemy.gd::GDScript::-1::1709322697::0::1::::<>EnemyBase<>::
+player.gd::GDScript::-1::1709322714::0::1::::<>CharacterBody2D<>::
+stationary_shooting_enemy.gd::GDScript::-1::1709322584::0::1::::<>EnemyBase<>::
 WateringSpot.gd::GDScript::-1::1709236612::0::1::::<>Area2D<>::
