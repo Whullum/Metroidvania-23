@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Level/climbable_vine.gd" id="1_88len"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_reiox"]
-size = Vector2(16, 64)
+size = Vector2(16, 128)
 
 [node name="ClimbableVine" type="Area2D"]
 collision_layer = 65
@@ -12,12 +12,12 @@ collision_mask = 2
 script = ExtResource("1_88len")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -32)
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_reiox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-scale = Vector2(1, 4)
+position = Vector2(0, -64)
+scale = Vector2(1, 8)
 texture = ExtResource("1_7equ0")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

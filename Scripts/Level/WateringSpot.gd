@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var climbable_vine_object: PackedScene = preload("res://Scenes/climbable_vine.tscn")
+@export var climbable_vine_object: PackedScene = preload("res://Scenes/Prefabs/LevelObjects/climbable_vine.tscn")
 
 func _on_area_entered(area):
 	if area.name == "WateringCanHitbox":

@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var knockback_magnitude: float = -300
 @export var velocity_x_clamp: float = 300.0
 @export var velocity_y_clamp: float = 400.0
+@export var current_tilemap: TileMap
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -17,6 +18,24 @@ var is_attacking: bool = false
 var can_climb = false
 var is_climbing = false
 var has_double_jump = true
+
+@onready var player_camera: Camera2D = $PlayerCamera
+
+func _ready():
+	current_tilemap = _get_tilemap_node()
+	if current_tilemap != null:
+		var map_rect = current_tilemap.get_used_rect()
+		var tile_size = current_tilemap.rendering_quadrant_size
+		var world_size_in_pixels = map_rect.size * tile_size
+		$PlayerCamera.limit_right = world_size_in_pixels.x
+		$PlayerCamera.limit_bottom = world_size_in_pixels.y 
+		$PlayerCamera.limit_left = 0
+		$PlayerCamera.limit_top = 0
+
+func _get_tilemap_node():
+	for child in get_parent().get_children():
+		if child is TileMap:
+			return child
 
 func _physics_process(delta):
 	# Add the gravity.
