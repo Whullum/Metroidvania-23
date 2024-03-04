@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhliwxuxmyhib"]
 
-[ext_resource type="Script" path="res://Scripts/dig_site.gd" id="1_i5e0l"]
+[ext_resource type="Script" path="res://Scripts/Level/dig_site.gd" id="1_i5e0l"]
 [ext_resource type="Texture2D" uid="uid://brmp7d5lrrl5e" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0013.png" id="1_mkaa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3flaf"]

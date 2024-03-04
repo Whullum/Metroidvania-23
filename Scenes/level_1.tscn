@@ -1,41 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgfti4i605p06"]
+[gd_scene load_steps=4 format=3 uid="uid://bgwtwniev8er0"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_0bfgx"]
+[ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_31i86"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_5w126"]
-[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/door.tscn" id="4_1rcum"]
-[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/player.tscn" id="4_dutnf"]
-[ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://Scenes/coin.tscn" id="5_0cfbi"]
+[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/Prefabs/Player/player.tscn" id="3_0d8ql"]
 
 [node name="Level_1" type="Node2D"]
-script = ExtResource("1_0bfgx")
+script = ExtResource("1_31i86")
 levelNumber = 1
 
-[node name="TestLabel" type="Label" parent="."]
-offset_left = 283.0
-offset_top = 260.0
-offset_right = 337.0
-offset_bottom = 283.0
-text = "Level 1
-"
-
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-54, 16)
 tile_set = ExtResource("2_5w126")
 format = 2
 layer_0/tile_data = PackedInt32Array(917526, 1048577, 5, 917527, 1048577, 5, 917528, 1048577, 5, 917529, 1048577, 5, 917530, 1048577, 5, 917531, 1048577, 5, 917532, 1048577, 5, 917533, 1048577, 5, 917534, 1048577, 5, 917535, 1048577, 5, 917536, 1048577, 5, 917537, 1048577, 5, 917538, 1048577, 5, 917539, 1048577, 5, 917540, 1048577, 5, 917541, 1048577, 5, 917542, 1114113, 5, 917525, 983041, 5, 786456, 262145, 5, 786457, 327681, 5, 786458, 393217, 5)
 
-[node name="Player" parent="." instance=ExtResource("4_dutnf")]
-position = Vector2(455, 184)
-
-[node name="Door" parent="." instance=ExtResource("4_1rcum")]
-connectingScene = "res://Scenes/level_2.tscn"
-
-[node name="Coins" type="Node" parent="."]
-
-[node name="Coin" parent="Coins" instance=ExtResource("5_0cfbi")]
-position = Vector2(353, 198)
-
-[node name="Coin2" parent="Coins" instance=ExtResource("5_0cfbi")]
-position = Vector2(306, 229)
-
-[connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
+[node name="Player" parent="." instance=ExtResource("3_0d8ql")]

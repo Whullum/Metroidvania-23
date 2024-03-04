@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://feq17rj8byk4"]
 
-[ext_resource type="Script" path="res://Scripts/patrol_enemy.gd" id="1_gey5p"]
+[ext_resource type="Script" path="res://Scripts/Enemies/patrol_enemy.gd" id="1_gey5p"]
 [ext_resource type="Texture2D" uid="uid://c6yklfdygf3p2" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0381.png" id="2_tuk40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atx5v"]

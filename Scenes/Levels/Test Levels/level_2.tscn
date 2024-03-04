@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7hm705j1pk5v"]
 
-[ext_resource type="Script" path="res://Scripts/level.gd" id="1_ka3wb"]
+[ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_ka3wb"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="1_podoe"]
-[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/player.tscn" id="2_rq47x"]
-[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/door.tscn" id="4_r3hka"]
-[ext_resource type="PackedScene" uid="uid://dk6l60ti8nrsk" path="res://Scenes/cuttable_vine.tscn" id="5_t1384"]
-[ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/dig_site.tscn" id="6_i0o23"]
-[ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/watering_spot.tscn" id="7_1gie7"]
+[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/Prefabs/Player/player.tscn" id="2_rq47x"]
+[ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/Prefabs/LevelObjects/door.tscn" id="4_r3hka"]
+[ext_resource type="PackedScene" uid="uid://dk6l60ti8nrsk" path="res://Scenes/Prefabs/LevelObjects/cuttable_vine.tscn" id="5_t1384"]
+[ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="6_i0o23"]
+[ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/Prefabs/LevelObjects/watering_spot.tscn" id="7_1gie7"]
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_ka3wb")

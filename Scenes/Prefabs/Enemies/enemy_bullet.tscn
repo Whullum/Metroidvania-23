@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d08a5f4pckurq"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_qy42c"]
+[ext_resource type="Script" path="res://Scripts/Enemies/enemy_bullet.gd" id="1_qy42c"]
 [ext_resource type="Texture2D" uid="uid://d33o2cojedaa8" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0022.png" id="2_nl4o0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wsmyo"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3m1v7ukjerub"]
 
-[ext_resource type="Script" path="res://Scripts/stationary_shooting_enemy.gd" id="1_gje8k"]
+[ext_resource type="Script" path="res://Scripts/Enemies/stationary_shooting_enemy.gd" id="1_gje8k"]
 [ext_resource type="Texture2D" uid="uid://bwsjfh3sthemg" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0340.png" id="2_ff3k2"]
-[ext_resource type="PackedScene" uid="uid://d08a5f4pckurq" path="res://Scenes/enemy_bullet.tscn" id="2_vyc4p"]
+[ext_resource type="PackedScene" uid="uid://d08a5f4pckurq" path="res://Scenes/Prefabs/Enemies/enemy_bullet.tscn" id="2_vyc4p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atx5v"]
 size = Vector2(16, 16)
