@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 
 Global="*res://Scripts/global.gd"
 Hud="*res://Scripts/UI/hud.gd"
+GlobalPlayerStats="*res://Scripts/global_player_stats.gd"
 
 [editor]
 
-movie_writer/movie_file="F:/Projects/Godot/Metroidvania23/Screenshots and recordings/enemies.avi"
+movie_writer/movie_file="F:/Projects/Godot/Metroidvania23/Screenshots and recordings/leveltest.avi"
 
 [input]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgw13lmcn5clc"]
+[gd_scene load_steps=7 format=3 uid="uid://bgw13lmcn5clc"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_0u84m"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_e60di"]
 [ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/Prefabs/Player/player.tscn" id="3_kfdtn"]
 [ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/Prefabs/LevelObjects/door.tscn" id="4_8mwy5"]
+[ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://Scenes/Prefabs/LevelObjects/coin.tscn" id="5_rb0lq"]
+[ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="6_0c6nf"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0u84m")
@@ -17,5 +19,26 @@ layer_0/tile_data = PackedInt32Array(1507328, 1114113, 6, 0, 1048577, 6, 65536, 
 [node name="Player" parent="." instance=ExtResource("3_kfdtn")]
 position = Vector2(88, 376)
 
-[node name="Door" parent="." instance=ExtResource("4_8mwy5")]
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("4_8mwy5")]
 position = Vector2(504, 376)
+connectingScene = "res://Scenes/Levels/Build Levels/C3-C5.tscn"
+is_spawning_right = false
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("5_rb0lq")]
+position = Vector2(152, 360)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("5_rb0lq")]
+position = Vector2(176, 360)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("5_rb0lq")]
+position = Vector2(200, 360)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("5_rb0lq")]
+position = Vector2(224, 360)
+
+[node name="DigSite" parent="." instance=ExtResource("6_0c6nf")]
+position = Vector2(120, 384)

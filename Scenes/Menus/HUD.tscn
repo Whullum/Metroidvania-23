@@ -10,6 +10,16 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -624.0
+offset_right = 113.0
+offset_bottom = -601.0
+grow_vertical = 0
+text = "Health Remaining:"
+
 [node name="CollectablesLabel" type="Label" parent="CanvasLayer"]
 offset_right = 124.0
 offset_bottom = 23.0

@@ -2,9 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cltiytb08kln3" path="res://1-Bit Platformer Pack/Tiles/Transparent/tile_0019.png" id="1_7equ0"]
 [ext_resource type="Script" path="res://Scripts/Level/climbable_vine.gd" id="1_88len"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_reiox"]
-size = Vector2(16, 128)
+[ext_resource type="Shape2D" uid="uid://ba0dnl6pyu8y4" path="res://Scenes/Prefabs/LevelObjects/CollisionShapes/climbable_vine_collision_shape.tres" id="2_ke02n"]
 
 [node name="ClimbableVine" type="Area2D"]
 collision_layer = 65
@@ -13,7 +11,7 @@ script = ExtResource("1_88len")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -64)
-shape = SubResource("RectangleShape2D_reiox")
+shape = ExtResource("2_ke02n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -64)

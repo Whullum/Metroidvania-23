@@ -99,7 +99,7 @@ func _on_detection_area_area_exited(area):
 	pass # Replace with function body
 
 func _on_enemy_damage_hitbox_area_entered(area):
-	if area.name == "MeleeHitbox":
+	if area.name == "MeleeHitbox" or area.name == "GroundPoundHitbox":
 		print_debug(name + " took damage!")
 		_take_damage()
 		

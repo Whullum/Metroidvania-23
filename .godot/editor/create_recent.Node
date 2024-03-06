@@ -1,12 +1,12 @@
+Node
+CollisionShape2D
+Area2D
 RigidBody2D
 CharacterBody2D
 Node2D
 RemoteTransform2D
 Timer
-Area2D
 Sprite2D
-CollisionShape2D
-Node
 AnimatedSprite2D
 CanvasLayer
 Label

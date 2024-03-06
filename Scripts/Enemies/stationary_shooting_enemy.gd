@@ -1,6 +1,6 @@
 extends EnemyBase
 
-@export var bullet_object: PackedScene = preload("res://Scenes/coin.tscn")
+@export var bullet_object: PackedScene = preload("res://Scenes/Prefabs/Enemies/enemy_bullet.tscn")
 
 var is_player_within_range: bool = false
 var player_position: Vector2

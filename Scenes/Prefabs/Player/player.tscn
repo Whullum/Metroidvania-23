@@ -8,7 +8,7 @@
 radius = 6.49351
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
-radius = 6.0
+radius = 24.3311
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekpk"]
 size = Vector2(20, 10)
@@ -84,9 +84,6 @@ animations = [{
 collision_layer = 2
 collision_mask = 325
 script = ExtResource("1_yr8x4")
-speed = 200.0
-jump_velocity_from_climb = -200.0
-climb_velocity = -2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -179,6 +176,13 @@ remote_path = NodePath("../PlayerCamera")
 
 [node name="HUD" parent="." instance=ExtResource("3_spghj")]
 
+[node name="CollectionHitbox" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dn5aj")
+
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]
 [connection signal="area_exited" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_exited"]
@@ -186,3 +190,5 @@ remote_path = NodePath("../PlayerCamera")
 [connection signal="timeout" from="WateringCanHitbox/WateringCanTimer" to="." method="_on_watering_can_timer_timeout"]
 [connection signal="timeout" from="DigHitbox/DigHitboxTimer" to="." method="_on_dig_hitbox_timer_timeout"]
 [connection signal="area_entered" from="GroundPoundHitbox" to="." method="_on_ground_pound_hitbox_area_entered"]
+[connection signal="area_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_entered"]
+[connection signal="area_exited" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_exited"]

@@ -19,9 +19,16 @@ var can_climb = false
 var is_climbing = false
 var has_double_jump = true
 
+var current_health: int
+
 @onready var player_camera: Camera2D = $PlayerCamera
+@onready var player_stats: GlobalPlayerStats = get_node("/root/GlobalPlayerStats")
+
+signal player_used_water
+signal player_take_damage
 
 func _ready():
+	current_health = player_stats.player_health
 	current_tilemap = _get_tilemap_node()
 	if current_tilemap != null:
 		var map_rect = current_tilemap.get_used_rect()
@@ -31,6 +38,11 @@ func _ready():
 		$PlayerCamera.limit_bottom = world_size_in_pixels.y 
 		$PlayerCamera.limit_left = 0
 		$PlayerCamera.limit_top = 0
+		
+	if get_parent().get_node("Enemies") != null:
+		for enemies in get_parent().get_node("Enemies").get_children():
+			enemies.player = self
+			pass
 
 func _get_tilemap_node():
 	for child in get_parent().get_children():
@@ -76,9 +88,14 @@ func _physics_process(delta):
 	
 	# Handle watering can action
 	if Input.is_action_just_pressed("watering_can") and is_on_floor():
-		$WateringCanHitbox/CollisionShape2D.disabled = false
-		is_attacking = true
-		$WateringCanHitbox/WateringCanTimer.start()
+		if GlobalPlayerStats.colleceted_water > 0:
+			$WateringCanHitbox/CollisionShape2D.disabled = false
+			is_attacking = true
+			$WateringCanHitbox/WateringCanTimer.start()
+			GlobalPlayerStats.colleceted_water -= 1
+			player_used_water.emit()
+		else:
+			print_debug("Out of water!")
 	
 	# Handle dig action
 	if Input.is_action_just_pressed("dig_action") and is_on_floor():
@@ -128,8 +145,6 @@ func _physics_process(delta):
 	
 	if is_attacking and !is_on_floor():
 		move_and_slide()
-	
-	
 		
 	if (Input.is_action_pressed("left") or Input.is_action_pressed("right")) and direction != 0:
 		$WateringCanHitbox.scale.x = sign(velocity.x)
@@ -141,6 +156,7 @@ func _physics_process(delta):
 		
 	if abs(velocity.y) > velocity_y_clamp:
 		velocity.y = velocity_y_clamp * sign(velocity.y)
+	pass
 
 func _on_melee_hitbox_timer_timeout():
 	$MeleeHitbox/CollisionShape2D.disabled = true
@@ -155,11 +171,11 @@ func _on_dig_hitbox_timer_timeout():
 	is_attacking = false
 
 func _on_interactable_hitbox_area_entered(area):
-	if area.name == "ClimbableVine":
+	if area is ClimbableVine:
 		can_climb = true
 
 func _on_interactable_hitbox_area_exited(area):
-	if area.name == "ClimbableVine":
+	if area is ClimbableVine:
 		can_climb = false
 		is_climbing = false
 
@@ -175,5 +191,27 @@ func _on_ground_pound_hitbox_area_entered(area):
 func _on_player_hitbox_area_entered(area):
 	print_debug("colliding with: " + area.name)
 	velocity = -global_position.direction_to(area.position) * knockback_magnitude
+	_take_damage(1)
 	move_and_slide()
+	pass # Replace with function body.
+
+func _take_damage(damage_amount: int):
+	player_stats.player_health -= damage_amount
+	current_health = player_stats.player_health
+	player_take_damage.emit()
+	
+	if current_health <= 0:
+		print_debug("Game Over")
+	pass
+
+func _on_collection_hitbox_area_entered(area):
+	if area is Coin:
+		area.is_player_within_range = true
+		area.player_position = self.position
+		#print_debug("coin is in collection area")
+	pass # Replace with function body.
+
+func _on_collection_hitbox_area_exited(area):
+	if area is Coin:
+		area.is_player_within_range = false
 	pass # Replace with function body.

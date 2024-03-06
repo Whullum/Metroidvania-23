@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://q6mhxhg4et6y"]
+[gd_scene load_steps=8 format=3 uid="uid://q6mhxhg4et6y"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_ongsn"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_d7cxb"]
-[ext_resource type="PackedScene" uid="uid://tyafu3ahtbak" path="res://Scenes/Prefabs/Player/player.tscn" id="3_5i3pq"]
+[ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/Prefabs/LevelObjects/watering_spot.tscn" id="4_3q2uq"]
 [ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/Prefabs/LevelObjects/door.tscn" id="4_l6jlq"]
+[ext_resource type="PackedScene" uid="uid://b3m1v7ukjerub" path="res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn" id="5_stny0"]
+[ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://Scenes/Prefabs/LevelObjects/coin.tscn" id="6_fgxgo"]
+[ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="7_rqm0u"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ongsn")
@@ -12,16 +15,87 @@ levelNumber = 1
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_d7cxb")
 format = 2
-layer_0/tile_data = PackedInt32Array(13, 1048577, 5, 14, 1048577, 5, 15, 1048577, 5, 16, 1048577, 5, 17, 1048577, 5, 18, 1048577, 5, 19, 1048577, 5, 20, 1048577, 5, 21, 1048577, 5, 22, 1048577, 5, 23, 1048577, 5, 983063, 1048577, 5, 0, 1048577, 5, 65536, 1048577, 5, 131072, 1048577, 5, 196608, 1048577, 5, 262144, 1048577, 5, 327680, 1048577, 5, 393216, 1048577, 5, 458752, 1048577, 5, 524288, 1048577, 5, 589824, 1048577, 5, 655360, 1048577, 5, 720896, 1048577, 5, 786432, 1048577, 5, 851968, 1048577, 5, 917504, 1048577, 5, 983040, 1048577, 5, 1, 1048577, 5, 2, 1048577, 5, 3, 1048577, 5, 4, 1048577, 5, 5, 1048577, 5, 6, 1048577, 5, 7, 1048577, 5, 8, 1048577, 5, 9, 1048577, 5, 10, 1048577, 5, 11, 1048577, 5, 12, 1048577, 5, 65559, 1048577, 5, 131095, 1048577, 5, 196631, 1048577, 5, 262167, 1048577, 5, 327703, 1048577, 5, 393239, 1048577, 5, 458775, 1048577, 5, 524311, 1048577, 5, 589847, 1048577, 5, 655383, 1048577, 5, 720919, 1048577, 5, 786455, 1048577, 5, 851991, 1048577, 5, 917527, 1048577, 5, 1048576, 1048577, 5, 1114112, 1048577, 5, 1179648, 1048577, 5, 1245184, 1048577, 5, 1310720, 1048577, 5, 1376256, 1048577, 5, 1441792, 1048577, 5, 1507328, 1048577, 5, 1048599, 1048577, 5, 1114135, 1048577, 5, 1179671, 1048577, 5, 1245207, 1048577, 5, 1310743, 1048577, 5, 1376279, 1048577, 5, 1441815, 1048577, 5, 1507351, 1048577, 5, 327681, 1048577, 5, 393217, 1048577, 5, 327682, 1048577, 5, 393218, 1048577, 5, 327683, 1048577, 5, 393219, 1048577, 5, 327684, 1048577, 5, 393220, 1048577, 5, 327685, 1048577, 5, 393221, 1048577, 5, 327686, 1048577, 5, 393222, 1048577, 5, 1507329, 720897, 5, 1507330, 720897, 5, 1507331, 720897, 5, 1507332, 720897, 5, 1507333, 720897, 5, 1507334, 720897, 5, 1507335, 720897, 5, 1507336, 720897, 5, 1507337, 720897, 5, 1507338, 720897, 5, 1507339, 720897, 5, 1507340, 720897, 5, 1507341, 720897, 5, 1507342, 720897, 5, 1507343, 720897, 5, 1507344, 720897, 5, 1507345, 720897, 5, 1507346, 720897, 5, 1507347, 720897, 5, 1507348, 720897, 5, 1507349, 720897, 5, 1507350, 720897, 5)
+layer_0/tile_data = PackedInt32Array(13, 1048577, 5, 14, 1048577, 5, 15, 1048577, 5, 16, 1048577, 5, 17, 1048577, 5, 18, 1048577, 5, 19, 1048577, 5, 20, 1048577, 5, 21, 1048577, 5, 22, 1048577, 5, 23, 1048577, 5, 983063, 1048577, 5, 0, 1048577, 5, 65536, 1048577, 5, 131072, 1048577, 5, 196608, 1048577, 5, 262144, 1048577, 5, 327680, 1048577, 5, 393216, 1048577, 5, 458752, 1048577, 5, 524288, 1048577, 5, 589824, 1048577, 5, 655360, 1048577, 5, 720896, 1048577, 5, 786432, 1048577, 5, 851968, 1048577, 5, 917504, 1048577, 5, 983040, 1048577, 5, 1, 1048577, 5, 2, 1048577, 5, 3, 1048577, 5, 4, 1048577, 5, 5, 1048577, 5, 6, 1048577, 5, 7, 1048577, 5, 8, 1048577, 5, 9, 1048577, 5, 10, 1048577, 5, 11, 1048577, 5, 12, 1048577, 5, 65559, 1048577, 5, 131095, 1048577, 5, 196631, 1048577, 5, 262167, 1048577, 5, 327703, 1048577, 5, 393239, 1048577, 5, 458775, 1048577, 5, 524311, 1048577, 5, 589847, 1048577, 5, 655383, 1048577, 5, 720919, 1048577, 5, 786455, 1048577, 5, 851991, 1048577, 5, 917527, 1048577, 5, 1048576, 1048577, 5, 1114112, 1048577, 5, 1179648, 1048577, 5, 1245184, 1048577, 5, 1310720, 1048577, 5, 1376256, 1048577, 5, 1441792, 1048577, 5, 1507328, 1048577, 5, 1048599, 1048577, 5, 1114135, 1048577, 5, 1179671, 1048577, 5, 1245207, 1048577, 5, 1310743, 1048577, 5, 1376279, 1048577, 5, 1441815, 1048577, 5, 1507351, 1048577, 5, 327681, 1048577, 5, 393217, 1048577, 5, 327682, 1048577, 5, 393218, 1048577, 5, 327683, 1048577, 5, 393219, 1048577, 5, 327684, 1048577, 5, 393220, 1048577, 5, 327685, 1048577, 5, 393221, 1048577, 5, 327686, 1048577, 5, 393222, 1048577, 5, 1507329, 1048577, 5, 1507330, 1048577, 5, 1507331, 1048577, 5, 1507332, 1048577, 5, 1507333, 1048577, 5, 1507334, 1048577, 5, 1507335, 1048577, 5, 1507336, 1048577, 5, 1507337, 1048577, 5, 1507338, 1048577, 5, 1507339, 1048577, 5, 1507340, 1048577, 5, 1507341, 1048577, 5, 1507342, 1048577, 5, 1507343, 1048577, 5, 1507344, 1048577, 5, 1507345, 1048577, 5, 1507346, 1048577, 5, 1507347, 1048577, 5, 1507348, 1048577, 5, 1507349, 1048577, 5, 1507350, 1048577, 5, 1572864, 1048577, 5, 1572865, 1048577, 5, 1572866, 1048577, 5, 1572867, 1048577, 5, 1572868, 1048577, 5, 1572869, 1048577, 5, 1572870, 1048577, 5, 1572871, 1048577, 5, 1572872, 1048577, 5, 1572873, 1048577, 5, 1572874, 1048577, 5, 1572875, 1048577, 5, 1572876, 1048577, 5, 1572877, 1048577, 5, 1572878, 1048577, 5, 1572879, 1048577, 5, 1572880, 1048577, 5, 1572881, 1048577, 5, 1572882, 1048577, 5, 1572883, 1048577, 5, 1572884, 1048577, 5, 1572885, 1048577, 5, 1572886, 1048577, 5, 1572887, 1048577, 5, 327687, 327681, 5, 327688, 327681, 5, 327689, 327681, 5, 327690, 327681, 5, 327691, 327681, 5, 327692, 327681, 5, 327693, 327681, 5, 327694, 327681, 5, 327695, 327681, 5, 327696, 327681, 5, 327697, 327681, 5, 327698, 327681, 5, 327699, 327681, 5, 327700, 327681, 5, 327701, 327681, 5, 327702, 327681, 5, 786443, 327681, 5, 786444, 327681, 5, 786445, 327681, 5, 786446, 327681, 5, 786447, 327681, 5, 786448, 327681, 5, 786449, 327681, 5, 786450, 327681, 5, 786451, 327681, 5, 786433, 1048577, 5, 786434, 1048577, 5, 786435, 1048577, 5, 786436, 1048577, 5, 786437, 1048577, 5, 786438, 1048577, 5, 786439, 1048577, 5, 786440, 1048577, 5, 786441, 1048577, 5, 786442, 1048577, 5, 786452, 1048577, 5, 786453, 1048577, 5, 786454, 1048577, 5, 851969, 1048577, 5, 851970, 1048577, 5, 851971, 1048577, 5, 851972, 1048577, 5, 851973, 1048577, 5, 851974, 1048577, 5, 851975, 1048577, 5, 851976, 1048577, 5, 851977, 1048577, 5, 851978, 1048577, 5, 851988, 1048577, 5, 851989, 1048577, 5, 851990, 1048577, 5, 1179661, 1048577, 5, 1245197, 1048577, 5, 1310733, 1048577, 5, 1376269, 1048577, 5, 1441805, 1048577, 5, 1179662, 1048577, 5, 1245198, 1048577, 5, 1310734, 1048577, 5, 1376270, 1048577, 5, 1441806, 1048577, 5, 1179663, 1048577, 5, 1245199, 1048577, 5, 1310735, 1048577, 5, 1376271, 1048577, 5, 1441807, 1048577, 5, 1179664, 1048577, 5, 1245200, 1048577, 5, 1310736, 1048577, 5, 1376272, 1048577, 5, 1441808, 1048577, 5, 1179665, 1048577, 5, 1245201, 1048577, 5, 1310737, 1048577, 5, 1376273, 1048577, 5, 1441809, 1048577, 5, 1179666, 327681, 5, 1179667, 327681, 5, 1179668, 327681, 5, 1179669, 327681, 5, 1179670, 327681, 5, 1179656, 327681, 5, 1179657, 327681, 5, 1179658, 327681, 5, 1179659, 327681, 5, 1179660, 327681, 5)
 
-[node name="Player" parent="." instance=ExtResource("3_5i3pq")]
-position = Vector2(64, 56)
+[node name="Doors" type="Node" parent="."]
 
-[node name="Door" parent="." instance=ExtResource("4_l6jlq")]
+[node name="DoorE7" parent="Doors" instance=ExtResource("4_l6jlq")]
 position = Vector2(48, 72)
+connectingScene = "res://Scenes/Levels/Build Levels/E7-G7.tscn"
+door_number = 1
 
-[node name="Door2" parent="." instance=ExtResource("4_l6jlq")]
+[node name="DoorD9" parent="Doors" instance=ExtResource("4_l6jlq")]
 position = Vector2(48, 360)
+connectingScene = "res://Scenes/Levels/Build Levels/C9-D9.tscn"
 
-[node name="Door3" parent="." instance=ExtResource("4_l6jlq")]
+[node name="DoorF9" parent="Doors" instance=ExtResource("4_l6jlq")]
 position = Vector2(328, 360)
+connectingScene = "res://Scenes/Levels/Build Levels/F8-G9.tscn"
+door_number = 2
+
+[node name="WateringSpot" parent="." instance=ExtResource("4_3q2uq")]
+position = Vector2(248, 192)
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(48, 184)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(72, 184)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(96, 184)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(64, 168)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(88, 168)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(112, 168)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(48, 152)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(72, 152)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(96, 152)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(64, 136)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(88, 136)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(112, 136)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(144, 280)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(168, 280)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(192, 280)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(304, 280)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(328, 280)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("6_fgxgo")]
+position = Vector2(352, 280)
+
+[node name="DigSite" parent="." instance=ExtResource("7_rqm0u")]
+position = Vector2(328, 80)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="StationaryShootingEnemy" parent="Enemies" instance=ExtResource("5_stny0")]
+position = Vector2(248, 288)
