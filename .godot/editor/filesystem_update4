@@ -1,28 +1,19 @@
-res://Scenes/Levels/Build Levels/C3-C5.tscn
+res://Scenes/Menus/HUD.tscn
 res://tiles.tres
-res://Scenes/Levels/Build Levels/D5-G6.tscn
-res://Scenes/Levels/Build Levels/F4-H4.tscn
-res://Scenes/Levels/Build Levels/H5-H7.tscn
-res://Scenes/Levels/Build Levels/E7-G7.tscn
-res://Scenes/Levels/Build Levels/E8-E9.tscn
+res://Scripts/UI/minimap.gd
+res://Scenes/Levels/Build Levels/A3-B3.tscn
+res://Scenes/Levels/Build Levels/C3-C5.tscn
+res://Scenes/Prefabs/LevelObjects/watering_spot.tscn
 res://Scenes/Levels/Build Levels/C9-D9.tscn
 res://Scenes/Levels/Build Levels/C10-C12.tscn
+res://Scenes/Levels/Build Levels/D5-G6.tscn
 res://Scenes/Levels/Build Levels/D12-H12.tscn
+res://Scenes/Levels/Build Levels/E7-G7.tscn
+res://Scenes/Levels/Build Levels/E8-E9.tscn
+res://Scenes/Levels/Build Levels/F4-H4.tscn
 res://Scenes/Levels/Build Levels/F8-G9.tscn
-res://Scenes/Levels/Build Levels/A3-B3.tscn
-res://Scenes/Levels/Level Templates/level_template32x32.tscn
-res://Scenes/Prefabs/Player/player.tscn
-res://Scripts/Level/WateringSpot.gd
-res://Scenes/Prefabs/LevelObjects/climbable_vine.tscn
-res://Scenes/Prefabs/LevelObjects/CollisionShapes/climbable_vine_collision_shape.tres
-res://Scripts/player.gd
-res://Scripts/Level/climbable_vine.gd
-res://Scenes/Prefabs/LevelObjects/cuttable_vine.tscn
-res://Scenes/Prefabs/LevelObjects/coin.tscn
-res://Scripts/Level/coin.gd
-res://Scripts/Enemies/patrol_enemy.gd
-res://Scenes/Prefabs/LevelObjects/watering_spot.tscn
-res://Scripts/Enemies/stationary_shooting_enemy.gd
-res://Scripts/Level/dig_site.gd
+res://Scenes/Levels/Build Levels/H5-H7.tscn
 res://Scenes/Prefabs/LevelObjects/dig_site.tscn
-res://Scripts/Level/level.gd
+res://Scenes/Prefabs/Player/player.tscn
+res://Scenes/Levels/Test Levels/minimap_test.tscn
+res://Scripts/global.gd

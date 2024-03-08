@@ -1,3 +1,7 @@
+Camera2D
+SubViewport
+SubViewportContainer
+ColorRect
 Node
 CollisionShape2D
 Area2D
@@ -9,6 +13,3 @@ Timer
 Sprite2D
 AnimatedSprite2D
 CanvasLayer
-Label
-Camera2D
-TileMap
