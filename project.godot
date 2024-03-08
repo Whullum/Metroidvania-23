@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Metroidvania23"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,13 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/global.gd"
 Hud="*res://Scripts/UI/hud.gd"
 GlobalPlayerStats="*res://Scripts/global_player_stats.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor]
 
