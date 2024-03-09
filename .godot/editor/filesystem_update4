@@ -5,3 +5,4 @@ res://Scripts/UI/main_menu.gd
 res://UI Assets/Themes/default_theme.tres
 res://tiles.tres
 res://Scenes/Menus/SettingsMenu.tscn
+res://Scenes/Menus/SettingsMenu.gd

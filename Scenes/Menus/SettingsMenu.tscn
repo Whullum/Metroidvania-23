@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0tbnw11hjanh"]
+[gd_scene load_steps=6 format=3 uid="uid://b0tbnw11hjanh"]
 
 [ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="1_ds7hw"]
+[ext_resource type="Script" path="res://Scenes/Menus/SettingsMenu.gd" id="1_h8gox"]
 [ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="2_8guhy"]
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="3_n7vvq"]
+[ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="4_pxrg7"]
 
-[node name="Control" type="Control"]
+[node name="SettingsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h8gox")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,9 +42,38 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 256
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0.0352941, 0.207843, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_8guhy")
 theme_override_font_sizes/font_size = 120
 text = "SETTINGS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_n7vvq")
+text = "Master Volume"
+
+[node name="Button_Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("3_n7vvq")
+text = "Back"
+icon = ExtResource("4_pxrg7")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]
