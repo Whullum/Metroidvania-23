@@ -5,3 +5,5 @@ res://Scenes/Menus/SettingsMenu.tscn
 res://Scenes/Menus/volume_slider.tscn
 res://Scenes/Menus/volume_slider.gd
 res://UI Assets/Themes/default_theme.tres
+res://Scenes/Menus/ControlsMenu.tscn
+res://Scripts/UI/main_menu.gd

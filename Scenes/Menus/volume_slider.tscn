@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dg1cch2gdfhbr"]
 
 [ext_resource type="Texture2D" uid="uid://d0rba108eqv2m" path="res://UI Assets/button.svg" id="1_e2ydl"]
-[ext_resource type="Script" path="res://Scenes/Menus/volume_slider.gd" id="1_r7jhu"]
+[ext_resource type="Script" path="res://Scripts/UI/volume_slider.gd" id="1_r7jhu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqasg"]
 content_margin_left = 0.0

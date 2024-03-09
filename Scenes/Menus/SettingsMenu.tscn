@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b0tbnw11hjanh"]
 
 [ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="1_ds7hw"]
-[ext_resource type="Script" path="res://Scenes/Menus/SettingsMenu.gd" id="1_h8gox"]
+[ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.gd" id="1_mjp2i"]
 [ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="2_8guhy"]
 [ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="3_n7vvq"]
 [ext_resource type="Texture2D" uid="uid://dgjm0op7bhjb7" path="res://UI Assets/ArrowFlip.svg" id="6_chknb"]
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h8gox")
+script = ExtResource("1_mjp2i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
