@@ -1,5 +1,5 @@
 res://Scenes/Menus/MainMenu.tscn
-res://tiles.tres
-res://Scenes/Menus/HUD.tscn
-res://UI Assets/Themes/default_theme.tres
+res://UI Assets/UI Prefabs/button.tscn
+res://UI Assets/UI Prefabs/button.gd
 res://Scripts/UI/main_menu.gd
+res://UI Assets/Themes/default_theme.tres
