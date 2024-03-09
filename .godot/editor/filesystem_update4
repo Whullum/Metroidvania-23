@@ -12,3 +12,5 @@ res://Scenes/Menus/PausedMenu.tscn
 res://Scripts/UI/PausedMenu.gd
 res://Scenes/level_1.tscn
 res://Scenes/Menus/HUD.tscn
+res://Scenes/Menus/GameOver.tscn
+res://Scenes/Menus/GameOver.gd
