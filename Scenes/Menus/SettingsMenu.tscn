@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0tbnw11hjanh"]
+
+[ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="1_ds7hw"]
+[ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="2_8guhy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.207843, 0.211765, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ds7hw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_8guhy")
+theme_override_font_sizes/font_size = 120
+text = "SETTINGS"

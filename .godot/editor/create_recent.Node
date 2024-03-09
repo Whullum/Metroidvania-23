@@ -1,10 +1,10 @@
+Label
 MarginContainer
 VBoxContainer
 HSeparator
 TextureRect
 Sprite2D
 Button
-Label
 HBoxContainer
 ColorRect
 Control
