@@ -1,8 +1,10 @@
+GridContainer
+Control
+HSlider
 Button
 HBoxContainer
 ProgressBar
 VBoxContainer
-Control
 Label
 MarginContainer
 HSeparator
@@ -11,4 +13,3 @@ Sprite2D
 ColorRect
 Node
 CollisionShape2D
-Area2D

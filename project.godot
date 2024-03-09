@@ -28,6 +28,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="Metroidvania23"
+
 [editor]
 
 movie_writer/movie_file="F:/Projects/Godot/Metroidvania23/Screenshots and recordings/leveltest.avi"

@@ -1,8 +1,7 @@
+res://default_bus_layout.tres
 res://Scenes/Menus/MainMenu.tscn
-res://UI Assets/UI Prefabs/button.tscn
-res://UI Assets/UI Prefabs/button.gd
-res://Scripts/UI/main_menu.gd
-res://UI Assets/Themes/default_theme.tres
 res://tiles.tres
 res://Scenes/Menus/SettingsMenu.tscn
-res://Scenes/Menus/SettingsMenu.gd
+res://Scenes/Menus/volume_slider.tscn
+res://Scenes/Menus/volume_slider.gd
+res://UI Assets/Themes/default_theme.tres
