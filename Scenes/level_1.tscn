@@ -6,7 +6,6 @@
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_31i86")
-levelNumber = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_5w126")

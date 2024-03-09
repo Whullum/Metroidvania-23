@@ -8,3 +8,7 @@ res://UI Assets/Themes/default_theme.tres
 res://Scenes/Menus/ControlsMenu.tscn
 res://Scripts/UI/main_menu.gd
 res://Scenes/Menus/CreditsMenu.tscn
+res://Scenes/Menus/PausedMenu.tscn
+res://Scripts/UI/PausedMenu.gd
+res://Scenes/level_1.tscn
+res://Scenes/Menus/HUD.tscn

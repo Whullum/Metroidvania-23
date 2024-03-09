@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b4qer54qbw4f1"]
+[gd_scene load_steps=2 format=3 uid="uid://b4qer54qbw4f1"]
+
+[ext_resource type="PackedScene" uid="uid://cfb8c6oom5ud8" path="res://Scenes/Menus/PausedMenu.tscn" id="1_a6i6h"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -9,6 +11,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PausedMenu" parent="CanvasLayer" instance=ExtResource("1_a6i6h")]
+visible = false
 
 [node name="HealthLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 2

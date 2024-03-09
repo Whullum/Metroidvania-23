@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfb8c6oom5ud8"]
+
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="1_ve2h8"]
+[ext_resource type="Script" path="res://Scripts/UI/PausedMenu.gd" id="2_bu4s2"]
+[ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="4_2a1h7"]
+[ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="5_kd6m8"]
+
+[node name="PausedMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ve2h8")
+script = ExtResource("2_bu4s2")
+metadata/_edit_group_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0.0352941, 0.207843, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_2a1h7")
+theme_override_font_sizes/font_size = 120
+text = "PAUSED"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 24
+
+[node name="Button_Resume" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Resume"
+icon = ExtResource("5_kd6m8")
+
+[node name="Button_Quit" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+text = "Quit"
+icon = ExtResource("5_kd6m8")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Button_Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Button_Quit" to="." method="_on_quit_button_pressed"]

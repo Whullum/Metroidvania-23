@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="5_c56qd"]
 [ext_resource type="Texture2D" uid="uid://dgjm0op7bhjb7" path="res://UI Assets/ArrowFlip.svg" id="8_ow8ou"]
 
-[node name="ControlsMenu" type="Control"]
+[node name="CreditsMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
