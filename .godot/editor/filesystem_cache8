@@ -1,9 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710034967
-default_bus_layout.tres::AudioBusLayout::7277362939555026838::1710019871::0::1::::<><>::
+::res://::1710045065
+default_bus_layout.tres::AudioBusLayout::7277362939555026838::1710037035::0::1::::<><>::
 icon.svg::CompressedTexture2D::5339630627178591244::1709858211::1709858211::1::::<><>::
-settingsMenuPrefab.tscn::PackedScene::3567854885654900378::1710035076::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://dg1cch2gdfhbr::::res://Scenes/Menus/volume_slider.tscn
-tiles.tres::TileSet::7986336785858186905::1710006219::0::1::::<><>::uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
+tiles.tres::TileSet::7986336785858186905::1710044625::0::1::::<><>::uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
 ::res://1-Bit Platformer Pack/::1709858211
 License.txt::TextFile::-1::1709858211::0::1::::<><>::
 Preview.png::CompressedTexture2D::7739119985258987302::1709858211::1709858211::1::::<><>::
@@ -839,16 +838,17 @@ level_template64x64.tscn::PackedScene::9172658889814245453::1709858308::0::1::::
 level_1.tscn::PackedScene::7591886447870291725::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cy564bg3nrhuj::::res://Scenes/Prefabs/LevelObjects/coin.tscn
 level_2.tscn::PackedScene::7034122117271962865::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://dk6l60ti8nrsk::::res://Scenes/Prefabs/LevelObjects/cuttable_vine.tscn<>uid://dhliwxuxmyhib::::res://Scenes/Prefabs/LevelObjects/dig_site.tscn<>uid://cmuklm5sd2dmq::::res://Scenes/Prefabs/LevelObjects/watering_spot.tscn
 level_3.tscn::PackedScene::4800721318642636742::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://ct0ymg0e2dgvf::::res://Scenes/Prefabs/Enemies/patrol_enemy.tscn<>uid://feq17rj8byk4::::res://Scenes/Prefabs/Enemies/flying_enemy.tscn<>uid://b3m1v7ukjerub::::res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn
-::res://Scenes/Menus/::1710034967
+::res://Scenes/Menus/::1710044820
 ControlsMenu.tscn::PackedScene::3385519454377882027::1710035005::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://cmuskw5qbumpl::::res://Scenes/Menus/controlsMenuPrefab.tscn<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
 controlsMenuPrefab.tscn::PackedScene::5657507012519570793::1710034935::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://d0rba108eqv2m::::res://UI Assets/button.svg<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bq4f72vbowb82::::res://UI Assets/spacebarSign.svg<>uid://df4koyovdaiwp::::res://UI Assets/MouseLeft.svg<>uid://brt6x62ry47aa::::res://UI Assets/MouseRight.svg
 CreditsMenu.tscn::PackedScene::3849857242162929864::1710034556::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
 GameOver.tscn::PackedScene::1785461453176254187::1710031691::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/GameOver.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg
-HUD.tscn::PackedScene::4455202040957479608::1710034556::0::1::::<><>::uid://cfb8c6oom5ud8::::res://Scenes/Menus/PausedMenu.tscn<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://hppqfmg3rpp1::::res://UI Assets/health_empty.png<>uid://dwmesm0pud6wt::::res://UI Assets/health_full.png<>uid://c41ephy4p2xry::::res://UI Assets/drop2.png
-MainMenu.tscn::PackedScene::7657205038890020597::1710034641::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/main_menu.gd<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://cqsus7jrc1g3w::::res://UI Assets/Robotanical_Logo.png
-PausedMenu.tscn::PackedScene::5127858846183977543::1710034556::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/PausedMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg
-SettingsMenu.tscn::PackedScene::4180450081154224057::1710031691::0::1::::<><>::uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>res://Scripts/UI/SettingsMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg<>uid://dg1cch2gdfhbr::::res://Scenes/Menus/volume_slider.tscn
-volume_slider.tscn::PackedScene::7634194349736390823::1710018208::0::1::::<><>::uid://d0rba108eqv2m::::res://UI Assets/button.svg<>res://Scripts/UI/volume_slider.gd
+HUD.tscn::PackedScene::4455202040957479608::1710038066::0::1::::<><>::uid://cfb8c6oom5ud8::::res://Scenes/Menus/PausedMenu.tscn<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://hppqfmg3rpp1::::res://UI Assets/health_empty.png<>uid://dwmesm0pud6wt::::res://UI Assets/health_full.png<>uid://c41ephy4p2xry::::res://UI Assets/drop2.png
+MainMenu.tscn::PackedScene::7657205038890020597::1710044820::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/main_menu.gd<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://cqsus7jrc1g3w::::res://UI Assets/Robotanical_Logo.png
+PausedMenu.tscn::PackedScene::5127858846183977543::1710038085::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/PausedMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://cmuskw5qbumpl::::res://Scenes/Menus/controlsMenuPrefab.tscn<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://bq3kbwj8bj6da::::res://Scenes/Menus/settingsMenuPrefab.tscn
+SettingsMenu.tscn::PackedScene::4180450081154224057::1710038217::0::1::::<><>::uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>res://Scripts/UI/SettingsMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bq3kbwj8bj6da::::res://Scenes/Menus/settingsMenuPrefab.tscn<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
+settingsMenuPrefab.tscn::PackedScene::3567854885654900378::1710038117::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://dg1cch2gdfhbr::::res://Scenes/Menus/volume_slider.tscn
+volume_slider.tscn::PackedScene::7634194349736390823::1710038162::0::1::::<><>::uid://d0rba108eqv2m::::res://UI Assets/button.svg<>res://Scripts/UI/volume_slider.gd
 ::res://Scenes/Prefabs/::1709858308
 ::res://Scenes/Prefabs/Enemies/::1709858308
 enemy_bullet.tscn::PackedScene::8982161489831931826::1709858308::0::1::::<><>::res://Scripts/Enemies/enemy_bullet.gd<>uid://d33o2cojedaa8::::res://1-Bit Platformer Pack/Tiles/Default/tile_0022.png
@@ -883,13 +883,13 @@ dig_site.gd::GDScript::-1::1709858308::0::1::::<>Area2D<>::
 door.gd::GDScript::-1::1709858308::0::1::::<>Area2D<>::
 level.gd::GDScript::-1::1709858308::0::1::::<>Node2D<>::
 WateringSpot.gd::GDScript::-1::1709858308::0::1::::<>Area2D<>::
-::res://Scripts/UI/::1710031684
+::res://Scripts/UI/::1710038014
 GameOver.gd::GDScript::-1::1710021120::0::1::::<>Control<>::
 hud.gd::GDScript::-1::1709858308::0::1::::<>Node<>::
 MainMenu.gd::GDScript::-1::1709858308::0::1::::<>Node2D<>::
 main_menu.gd::GDScript::-1::1710029960::0::1::::<>Control<>::
 PausedMenu.gd::GDScript::-1::1710031684::0::1::::<>Control<>::
-SettingsMenu.gd::GDScript::-1::1709949023::0::1::::<>Control<>::
+SettingsMenu.gd::GDScript::-1::1710038014::0::1::::<>Control<>::
 volume_slider.gd::GDScript::-1::1710008938::0::1::::<>HSlider<>::
 ::res://UI Assets/::1710033942
 Arrow.svg::CompressedTexture2D::2486518194742238139::1709917092::1709917120::1::::<><>::
@@ -909,7 +909,7 @@ Oxanium-Bold.ttf::FontFile::4455457457306927721::1709913670::1709913670::1::::<>
 Oxanium-ExtraBold.ttf::FontFile::2605142203241590094::1709913609::1709913615::1::::<><>::
 Oxanium-Medium.ttf::FontFile::2729910476223746966::1709913643::1709913644::1::::<><>::
 Oxanium-Regular.ttf::FontFile::7362522453488003538::1709913631::1709913631::1::::<><>::
-::res://UI Assets/Themes/::1710010733
-default_theme.tres::Theme::4267328886779534343::1710010733::0::1::::<><>::uid://dc5pw0rr1v6x7::::res://UI Assets/Fonts/Oxanium-Regular.ttf
+::res://UI Assets/Themes/::1710037702
+default_theme.tres::Theme::4267328886779534343::1710037702::0::1::::<><>::uid://dc5pw0rr1v6x7::::res://UI Assets/Fonts/Oxanium-Regular.ttf
 ::res://UI Assets/UI Prefabs/::1709942185
 button.tscn::PackedScene::4736006744711931496::1709942185::0::1::::<><>::uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>res://UI Assets/UI Prefabs/button.gd<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres
