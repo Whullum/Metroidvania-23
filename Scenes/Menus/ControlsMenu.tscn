@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://boh8amp20ewln"]
+[gd_scene load_steps=11 format=3 uid="uid://boh8amp20ewln"]
 
 [ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.gd" id="1_nwf2o"]
 [ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="2_vffid"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://d0rba108eqv2m" path="res://UI Assets/button.svg" id="6_l6wh0"]
 [ext_resource type="Texture2D" uid="uid://dgjm0op7bhjb7" path="res://UI Assets/ArrowFlip.svg" id="6_ue7m8"]
 [ext_resource type="Texture2D" uid="uid://bq4f72vbowb82" path="res://UI Assets/spacebarSign.svg" id="7_hd5h6"]
+[ext_resource type="Texture2D" uid="uid://df4koyovdaiwp" path="res://UI Assets/MouseLeft.svg" id="8_cujt6"]
+[ext_resource type="Texture2D" uid="uid://brt6x62ry47aa" path="res://UI Assets/MouseRight.svg" id="9_u4ska"]
 
 [node name="ControlsMenu" type="Control"]
 layout_mode = 3
@@ -72,7 +74,7 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 24
 columns = 3
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+[node name="Label_Move" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Move"
@@ -111,7 +113,7 @@ stretch_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer2"]
 layout_mode = 2
@@ -226,7 +228,7 @@ text = "D
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+[node name="Label_Jump" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Jump"
@@ -298,7 +300,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 axis_stretch_vertical = 1
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+[node name="Label_Attack" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Attack"
@@ -335,14 +337,20 @@ size_flags_vertical = 4
 texture = ExtResource("5_uago0")
 stretch_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+[node name="HBoxContainer6" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer6"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("6_l6wh0")
 stretch_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/TextureRect"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer6/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -359,7 +367,86 @@ theme = ExtResource("4_x4ymy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ko322")
 theme_override_font_sizes/font_size = 24
-text = "Z"
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Attack2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme = ExtResource("4_x4ymy")
+theme_override_fonts/font = ExtResource("3_ko322")
+theme_override_font_sizes/font_size = 24
+text = "Or"
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("8_cujt6")
+
+[node name="Label_Dig" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("4_x4ymy")
+text = "Dig"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_uago0")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_uago0")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_uago0")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("5_uago0")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("6_l6wh0")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_x4ymy")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ko322")
+theme_override_font_sizes/font_size = 24
+text = "L"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -369,7 +456,7 @@ theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 24
 columns = 3
 
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
+[node name="Label_Interact" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Interact"
@@ -430,11 +517,11 @@ theme = ExtResource("4_x4ymy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ko322")
 theme_override_font_sizes/font_size = 24
-text = "I"
+text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
+[node name="Label_Watering" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Watering"
@@ -471,14 +558,20 @@ size_flags_vertical = 4
 texture = ExtResource("5_uago0")
 stretch_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
+[node name="HBoxContainer7" type="HBoxContainer" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2/HBoxContainer7"]
+texture_filter = 1
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("6_l6wh0")
 stretch_mode = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2/TextureRect2"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2/HBoxContainer7/TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -495,11 +588,25 @@ theme = ExtResource("4_x4ymy")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_ko322")
 theme_override_font_sizes/font_size = 24
-text = "C"
+text = "K"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
+[node name="Label_Attack2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2/HBoxContainer7"]
+layout_mode = 2
+theme = ExtResource("4_x4ymy")
+theme_override_fonts/font = ExtResource("3_ko322")
+theme_override_font_sizes/font_size = 24
+text = "Or"
+
+[node name="TextureRect4" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("9_u4ska")
+
+[node name="Label_Pause" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/GridContainer2"]
 layout_mode = 2
 theme = ExtResource("4_x4ymy")
 text = "Pause"
