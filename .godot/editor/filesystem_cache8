@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710028804
+::res://::1710034967
 default_bus_layout.tres::AudioBusLayout::7277362939555026838::1710019871::0::1::::<><>::
 icon.svg::CompressedTexture2D::5339630627178591244::1709858211::1709858211::1::::<><>::
+settingsMenuPrefab.tscn::PackedScene::3567854885654900378::1710035076::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://dg1cch2gdfhbr::::res://Scenes/Menus/volume_slider.tscn
 tiles.tres::TileSet::7986336785858186905::1710006219::0::1::::<><>::uid://do4dqs14geydu::::res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png
 ::res://1-Bit Platformer Pack/::1709858211
 License.txt::TextFile::-1::1709858211::0::1::::<><>::
@@ -838,13 +839,14 @@ level_template64x64.tscn::PackedScene::9172658889814245453::1709858308::0::1::::
 level_1.tscn::PackedScene::7591886447870291725::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cy564bg3nrhuj::::res://Scenes/Prefabs/LevelObjects/coin.tscn
 level_2.tscn::PackedScene::7034122117271962865::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://dk6l60ti8nrsk::::res://Scenes/Prefabs/LevelObjects/cuttable_vine.tscn<>uid://dhliwxuxmyhib::::res://Scenes/Prefabs/LevelObjects/dig_site.tscn<>uid://cmuklm5sd2dmq::::res://Scenes/Prefabs/LevelObjects/watering_spot.tscn
 level_3.tscn::PackedScene::4800721318642636742::1710029658::0::1::::<><>::res://Scripts/Level/level.gd<>uid://dl1v2g37rekyr::::res://tiles.tres<>uid://tyafu3ahtbak::::res://Scenes/Prefabs/Player/player.tscn<>uid://cb27whjxdt6me::::res://Scenes/Prefabs/LevelObjects/door.tscn<>uid://ct0ymg0e2dgvf::::res://Scenes/Prefabs/Enemies/patrol_enemy.tscn<>uid://feq17rj8byk4::::res://Scenes/Prefabs/Enemies/flying_enemy.tscn<>uid://b3m1v7ukjerub::::res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn
-::res://Scenes/Menus/::1710032082
-ControlsMenu.tscn::PackedScene::3385519454377882027::1710018208::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://d0rba108eqv2m::::res://UI Assets/button.svg<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg<>uid://bq4f72vbowb82::::res://UI Assets/spacebarSign.svg
-CreditsMenu.tscn::PackedScene::3849857242162929864::1710018450::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
+::res://Scenes/Menus/::1710034967
+ControlsMenu.tscn::PackedScene::3385519454377882027::1710035005::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://cmuskw5qbumpl::::res://Scenes/Menus/controlsMenuPrefab.tscn<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
+controlsMenuPrefab.tscn::PackedScene::5657507012519570793::1710034935::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://d0rba108eqv2m::::res://UI Assets/button.svg<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bq4f72vbowb82::::res://UI Assets/spacebarSign.svg<>uid://df4koyovdaiwp::::res://UI Assets/MouseLeft.svg<>uid://brt6x62ry47aa::::res://UI Assets/MouseRight.svg
+CreditsMenu.tscn::PackedScene::3849857242162929864::1710034556::0::1::::<><>::res://Scripts/UI/SettingsMenu.gd<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg
 GameOver.tscn::PackedScene::1785461453176254187::1710031691::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/GameOver.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg
-HUD.tscn::PackedScene::4455202040957479608::1710032082::0::1::::<><>::uid://cfb8c6oom5ud8::::res://Scenes/Menus/PausedMenu.tscn<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://hppqfmg3rpp1::::res://UI Assets/health_empty.png<>uid://dwmesm0pud6wt::::res://UI Assets/health_full.png<>uid://c41ephy4p2xry::::res://UI Assets/drop2.png
-MainMenu.tscn::PackedScene::7657205038890020597::1710032082::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/main_menu.gd<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://cqsus7jrc1g3w::::res://UI Assets/Robotanical_Logo.png
-PausedMenu.tscn::PackedScene::5127858846183977543::1710032082::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/PausedMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg
+HUD.tscn::PackedScene::4455202040957479608::1710034556::0::1::::<><>::uid://cfb8c6oom5ud8::::res://Scenes/Menus/PausedMenu.tscn<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://hppqfmg3rpp1::::res://UI Assets/health_empty.png<>uid://dwmesm0pud6wt::::res://UI Assets/health_full.png<>uid://c41ephy4p2xry::::res://UI Assets/drop2.png
+MainMenu.tscn::PackedScene::7657205038890020597::1710034641::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/main_menu.gd<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg<>uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>uid://cqsus7jrc1g3w::::res://UI Assets/Robotanical_Logo.png
+PausedMenu.tscn::PackedScene::5127858846183977543::1710034556::0::1::::<><>::uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>res://Scripts/UI/PausedMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://bboqudvx15vm6::::res://UI Assets/Arrow.svg
 SettingsMenu.tscn::PackedScene::4180450081154224057::1710031691::0::1::::<><>::uid://5x3g026r5i7y::::res://UI Assets/mountains-7728691_1920.png<>res://Scripts/UI/SettingsMenu.gd<>uid://b4qiy61os4t0d::::res://UI Assets/Fonts/Oxanium-Bold.ttf<>uid://b12ejvq36xstr::::res://UI Assets/Themes/default_theme.tres<>uid://dgjm0op7bhjb7::::res://UI Assets/ArrowFlip.svg<>uid://dg1cch2gdfhbr::::res://Scenes/Menus/volume_slider.tscn
 volume_slider.tscn::PackedScene::7634194349736390823::1710018208::0::1::::<><>::uid://d0rba108eqv2m::::res://UI Assets/button.svg<>res://Scripts/UI/volume_slider.gd
 ::res://Scenes/Prefabs/::1709858308
@@ -889,7 +891,7 @@ main_menu.gd::GDScript::-1::1710029960::0::1::::<>Control<>::
 PausedMenu.gd::GDScript::-1::1710031684::0::1::::<>Control<>::
 SettingsMenu.gd::GDScript::-1::1709949023::0::1::::<>Control<>::
 volume_slider.gd::GDScript::-1::1710008938::0::1::::<>HSlider<>::
-::res://UI Assets/::1710033915
+::res://UI Assets/::1710033942
 Arrow.svg::CompressedTexture2D::2486518194742238139::1709917092::1709917120::1::::<><>::
 ArrowFlip.svg::CompressedTexture2D::7599748521409379182::1710011041::1710011042::1::::<><>::
 button.svg::CompressedTexture2D::8949139686574477974::1710011742::1710011743::1::::<><>::
@@ -898,8 +900,6 @@ drop.png::CompressedTexture2D::549257420793745736::1710028145::1710028146::1::::
 health_empty.png::CompressedTexture2D::523227180836218332::1710023491::1710023503::1::::<><>::
 health_full.png::CompressedTexture2D::8728464826034811635::1710023491::1710023503::1::::<><>::
 mountains-7728691_1920.png::CompressedTexture2D::2154858144271114904::1709858983::1709858990::1::::<><>::
-MouseControlL.png::CompressedTexture2D::5111942398950209795::1710032527::1710032528::1::::<><>::
-MouseControlR.png::CompressedTexture2D::7286811515661746148::1710032527::1710032528::1::::<><>::
 MouseLeft.svg::CompressedTexture2D::7570706678325359979::1710033915::1710033916::1::::<><>::
 MouseRight.svg::CompressedTexture2D::3620779173641585096::1710033915::1710033916::1::::<><>::
 Robotanical_Logo.png::CompressedTexture2D::5934269844739962678::1709917498::1709917498::1::::<><>::

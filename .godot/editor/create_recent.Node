@@ -1,8 +1,8 @@
+GridContainer
+MarginContainer
 HBoxContainer
 Panel
-MarginContainer
 Control
-GridContainer
 NinePatchRect
 VBoxContainer
 VSeparator

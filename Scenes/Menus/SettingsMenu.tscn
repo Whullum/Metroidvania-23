@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.gd" id="1_mjp2i"]
 [ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="2_8guhy"]
 [ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="3_n7vvq"]
+[ext_resource type="PackedScene" uid="uid://bq3kbwj8bj6da" path="res://Scenes/Menus/settingsMenuPrefab.tscn" id="4_xrnvj"]
 [ext_resource type="Texture2D" uid="uid://dgjm0op7bhjb7" path="res://UI Assets/ArrowFlip.svg" id="6_chknb"]
-[ext_resource type="PackedScene" uid="uid://dg1cch2gdfhbr" path="res://Scenes/Menus/volume_slider.tscn" id="6_cm7b1"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -58,65 +58,13 @@ theme_override_fonts/font = ExtResource("2_8guhy")
 theme_override_font_sizes/font_size = 120
 text = "SETTINGS"
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="GridContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_xrnvj")]
 layout_mode = 2
-theme_override_constants/h_separation = 50
-theme_override_constants/v_separation = 24
-columns = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme = ExtResource("3_n7vvq")
-text = "Master Volume"
-
-[node name="volume_slider_master" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("6_cm7b1")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-focus_neighbor_top = NodePath("../../Button_Back")
-focus_neighbor_bottom = NodePath("../volume_slider_sfx")
-focus_next = NodePath("../volume_slider_sfx")
-focus_previous = NodePath("../../Button_Back")
-bus_name = "Master"
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme = ExtResource("3_n7vvq")
-text = "Sound Effects"
-
-[node name="volume_slider_sfx" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("6_cm7b1")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-focus_neighbor_top = NodePath("../volume_slider_master")
-focus_neighbor_bottom = NodePath(".")
-focus_next = NodePath(".")
-focus_previous = NodePath("../volume_slider_master")
-bus_name = "SFX"
-
-[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
-layout_mode = 2
-theme = ExtResource("3_n7vvq")
-text = "Music"
-
-[node name="volume_slider_music" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("6_cm7b1")]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-focus_neighbor_top = NodePath("../volume_slider_sfx")
-focus_neighbor_bottom = NodePath("../../Button_Back")
-focus_next = NodePath("../../Button_Back")
-focus_previous = NodePath("../volume_slider_sfx")
-bus_name = "Music"
 
 [node name="Button_Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-focus_neighbor_top = NodePath("../GridContainer/volume_slider_music")
-focus_neighbor_bottom = NodePath("../GridContainer/volume_slider_master")
-focus_next = NodePath("../GridContainer/volume_slider_master")
-focus_previous = NodePath("../GridContainer/volume_slider_music")
 theme = ExtResource("3_n7vvq")
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
 text = "Back"

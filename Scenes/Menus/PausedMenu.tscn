@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfb8c6oom5ud8"]
+[gd_scene load_steps=7 format=3 uid="uid://cfb8c6oom5ud8"]
 
 [ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="1_ve2h8"]
 [ext_resource type="Script" path="res://Scripts/UI/PausedMenu.gd" id="2_bu4s2"]
 [ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="4_2a1h7"]
+[ext_resource type="PackedScene" uid="uid://cmuskw5qbumpl" path="res://Scenes/Menus/controlsMenuPrefab.tscn" id="4_jd8yo"]
 [ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="5_kd6m8"]
+[ext_resource type="PackedScene" uid="uid://bq3kbwj8bj6da" path="res://Scenes/Menus/settingsMenuPrefab.tscn" id="5_yjuu4"]
 
 [node name="PausedMenu" type="Control"]
 process_mode = 3
@@ -34,44 +36,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 256
-theme_override_constants/margin_top = 32
+theme_override_constants/margin_top = 200
 theme_override_constants/margin_right = 256
-theme_override_constants/margin_bottom = 32
+theme_override_constants/margin_bottom = 200
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Title" type="Label" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_constants/separation = 50
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0.0352941, 0.207843, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("4_2a1h7")
 theme_override_font_sizes/font_size = 120
 text = "PAUSED"
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 50
-theme_override_constants/v_separation = 24
+size_flags_vertical = 8
+columns = 2
 
-[node name="Button_Resume" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="Button_Resume" type="Button" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("4_2a1h7")
+theme_override_font_sizes/font_size = 60
 text = "Resume"
 icon = ExtResource("5_kd6m8")
 
-[node name="Button_Quit" type="Button" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="Button_Quit" type="Button" parent="MarginContainer/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
+size_flags_horizontal = 10
+size_flags_vertical = 6
 text = "Quit"
 icon = ExtResource("5_kd6m8")
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -190.0
+offset_right = 1689.0
+offset_bottom = 387.0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+theme_override_constants/margin_left = 435
+
+[node name="GridContainer3" type="GridContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/v_separation = 100
+
+[node name="GridContainer" parent="MarginContainer2/GridContainer3" instance=ExtResource("4_jd8yo")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="GridContainer2" parent="MarginContainer2/GridContainer3" instance=ExtResource("5_yjuu4")]
+layout_mode = 2
+size_flags_vertical = 0
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Button_Resume" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/GridContainer/Button_Quit" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button_Resume" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/GridContainer/Button_Quit" to="." method="_on_quit_button_pressed"]

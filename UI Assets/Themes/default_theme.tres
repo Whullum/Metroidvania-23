@@ -20,7 +20,6 @@ Button/colors/font_hover_color = Color(0.705882, 0.12549, 0.164706, 1)
 Button/colors/font_pressed_color = Color(0.705882, 0.12549, 0.164706, 1)
 Button/colors/icon_focus_color = Color(0.705882, 0.12549, 0.164706, 1)
 Button/colors/icon_hover_color = Color(0.705882, 0.12549, 0.164706, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 0)
 Button/colors/icon_pressed_color = Color(0.705882, 0.12549, 0.164706, 1)
 Button/constants/h_separation = 32
 Button/styles/disabled = SubResource("StyleBoxEmpty_r4t08")
