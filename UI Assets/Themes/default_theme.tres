@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b12ejvq36xstr"]
+
+[ext_resource type="FontFile" uid="uid://dc5pw0rr1v6x7" path="res://UI Assets/Fonts/Oxanium-Regular.ttf" id="1_fkcaw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r4t08"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v28ul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uup0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y4ywe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_241ly"]
+
+[resource]
+default_font = ExtResource("1_fkcaw")
+default_font_size = 50
+Button/colors/font_focus_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/font_hover_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/font_pressed_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/icon_focus_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/icon_hover_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(0.705882, 0.12549, 0.164706, 1)
+Button/constants/h_separation = 32
+Button/styles/disabled = SubResource("StyleBoxEmpty_r4t08")
+Button/styles/focus = SubResource("StyleBoxEmpty_v28ul")
+Button/styles/hover = SubResource("StyleBoxEmpty_uup0b")
+Button/styles/normal = SubResource("StyleBoxEmpty_y4ywe")
+Button/styles/pressed = SubResource("StyleBoxEmpty_241ly")

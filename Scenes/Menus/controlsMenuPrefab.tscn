@@ -1,0 +1,623 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmuskw5qbumpl"]
+
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="1_lh6k0"]
+[ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="2_vot5l"]
+[ext_resource type="Texture2D" uid="uid://d0rba108eqv2m" path="res://UI Assets/button.svg" id="3_sy2g8"]
+[ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="4_gnhcj"]
+[ext_resource type="Texture2D" uid="uid://bq4f72vbowb82" path="res://UI Assets/spacebarSign.svg" id="5_cwqe3"]
+[ext_resource type="Texture2D" uid="uid://df4koyovdaiwp" path="res://UI Assets/MouseLeft.svg" id="6_qqrd1"]
+[ext_resource type="Texture2D" uid="uid://brt6x62ry47aa" path="res://UI Assets/MouseRight.svg" id="7_j6y8d"]
+
+[node name="GridContainer" type="GridContainer"]
+theme_override_constants/h_separation = 200
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 24
+columns = 3
+
+[node name="Label_Move" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Move"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/HBoxContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/HBoxContainer2/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/HBoxContainer2/TextureRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/HBoxContainer2/TextureRect4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "D
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Jump" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Jump"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GridContainer"]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+region_rect = Rect2(0, 0, 32, 33)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="GridContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -4.0
+offset_right = 41.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("5_cwqe3")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_vertical = 1
+
+[node name="Label_Attack" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Attack"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer6"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/HBoxContainer6/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "J"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Attack2" type="Label" parent="GridContainer/HBoxContainer6"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "Or"
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("6_qqrd1")
+
+[node name="Label_Dig" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Dig"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="GridContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer2" type="GridContainer" parent="."]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 24
+columns = 3
+
+[node name="Label_Interact" type="Label" parent="GridContainer2"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Interact"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="GridContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer2/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer2/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Watering" type="Label" parent="GridContainer2"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Watering"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="GridContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer2/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/HBoxContainer7"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+stretch_mode = 2
+
+[node name="Label2" type="Label" parent="GridContainer2/HBoxContainer7/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -12.5
+offset_right = 14.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "K"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label_Attack2" type="Label" parent="GridContainer2/HBoxContainer7"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "Or"
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer2/HBoxContainer7"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("7_j6y8d")
+
+[node name="Label_Pause" type="Label" parent="GridContainer2"]
+layout_mode = 2
+theme = ExtResource("1_lh6k0")
+text = "Pause"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="GridContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer2/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("2_vot5l")
+stretch_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GridContainer2"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_sy2g8")
+region_rect = Rect2(0, 0, 32, 33)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_vertical = 1
+
+[node name="Label2" type="Label" parent="GridContainer2/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -12.5
+offset_right = 22.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lh6k0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_gnhcj")
+theme_override_font_sizes/font_size = 24
+text = "ESC"
+horizontal_alignment = 1
+vertical_alignment = 1

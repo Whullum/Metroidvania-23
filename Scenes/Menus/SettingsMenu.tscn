@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0tbnw11hjanh"]
+
+[ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="1_ds7hw"]
+[ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.gd" id="1_mjp2i"]
+[ext_resource type="FontFile" uid="uid://b4qiy61os4t0d" path="res://UI Assets/Fonts/Oxanium-Bold.ttf" id="2_8guhy"]
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="3_n7vvq"]
+[ext_resource type="PackedScene" uid="uid://bq3kbwj8bj6da" path="res://Scenes/Menus/settingsMenuPrefab.tscn" id="4_xrnvj"]
+[ext_resource type="Texture2D" uid="uid://dgjm0op7bhjb7" path="res://UI Assets/ArrowFlip.svg" id="6_chknb"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjp2i")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.207843, 0.211765, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ds7hw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_right = 720
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0.0352941, 0.207843, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_8guhy")
+theme_override_font_sizes/font_size = 120
+text = "SETTINGS"
+
+[node name="GridContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_xrnvj")]
+layout_mode = 2
+
+[node name="Button_Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("3_n7vvq")
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+text = "Back"
+icon = ExtResource("6_chknb")
+alignment = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button_Back" to="." method="_on_button_back_pressed"]

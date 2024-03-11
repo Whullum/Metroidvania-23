@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq3kbwj8bj6da"]
+
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="1_2njqe"]
+[ext_resource type="PackedScene" uid="uid://dg1cch2gdfhbr" path="res://Scenes/Menus/volume_slider.tscn" id="2_sm15v"]
+
+[node name="GridContainer" type="GridContainer"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 24
+columns = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_2njqe")
+text = "Master Volume"
+
+[node name="volume_slider_master" parent="." instance=ExtResource("2_sm15v")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_neighbor_top = NodePath("../../Button_Back")
+focus_neighbor_bottom = NodePath("../volume_slider_sfx")
+focus_next = NodePath("../volume_slider_sfx")
+focus_previous = NodePath("../../Button_Back")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_2njqe")
+text = "Sound Effects"
+
+[node name="volume_slider_sfx" parent="." instance=ExtResource("2_sm15v")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_neighbor_top = NodePath("../volume_slider_master")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath("../volume_slider_master")
+bus_name = "SFX"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_2njqe")
+text = "Music"
+
+[node name="volume_slider_music" parent="." instance=ExtResource("2_sm15v")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+focus_neighbor_top = NodePath("../volume_slider_sfx")
+focus_neighbor_bottom = NodePath("../../Button_Back")
+focus_next = NodePath("../../Button_Back")
+focus_previous = NodePath("../volume_slider_sfx")
+bus_name = "Music"

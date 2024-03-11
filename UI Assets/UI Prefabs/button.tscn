@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8qflsb2hunhw"]
+
+[ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="1_gdmur"]
+[ext_resource type="Script" path="res://UI Assets/UI Prefabs/button.gd" id="1_tfduk"]
+[ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="2_r5jwo"]
+
+[node name="Button" type="HBoxContainer"]
+offset_right = 300.0
+offset_bottom = 50.0
+theme_override_constants/separation = 32
+script = ExtResource("1_tfduk")
+
+[node name="ArrowIcon" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.705882, 0.12549, 0.164706, 1)
+layout_mode = 2
+texture = ExtResource("1_gdmur")
+stretch_mode = 5
+
+[node name="StartGameButton" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../../QuitGameButton")
+focus_neighbor_bottom = NodePath("../../QuitGameButton")
+focus_next = NodePath("../../QuitGameButton")
+focus_previous = NodePath("../../QuitGameButton")
+theme = ExtResource("2_r5jwo")
+text = "Start Game"
+text_direction = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
