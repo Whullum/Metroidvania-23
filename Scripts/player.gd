@@ -77,6 +77,7 @@ func _physics_process(delta):
 		if has_double_jump:
 			velocity.y = jump_velocity_double
 			has_double_jump = false
+			$PlayerSprite.play("jump")
 			pass
 		pass
 	
@@ -90,7 +91,8 @@ func _physics_process(delta):
 		$MeleeHitbox/CollisionShape2D.disabled = false
 		is_attacking = true
 		$MeleeHitbox/MeleeHitboxTimer.start()
-	
+		$PlayerSprite.play("attack")
+		
 	# Handle watering can action
 	if Input.is_action_just_pressed("watering_can") and is_on_floor():
 		if GlobalPlayerStats.colleceted_water > 0:
@@ -152,9 +154,9 @@ func _physics_process(delta):
 		move_and_slide()
 		
 	if (Input.is_action_pressed("left") or Input.is_action_pressed("right")) and direction != 0:
-		$WateringCanHitbox.scale.x = sign(velocity.x)
-		$MeleeHitbox.scale.x = sign(velocity.x)
-		$DigHitbox.scale.x = sign(velocity.x)
+		$WateringCanHitbox.scale.x = abs($WateringCanHitbox.scale.x) * direction
+		$MeleeHitbox.scale.x = abs($MeleeHitbox.scale.x) * direction
+		$DigHitbox.scale.x = abs($DigHitbox.scale.x) * direction
 		
 	if abs(velocity.x) > velocity_x_clamp:
 		velocity.x = velocity_x_clamp * sign(velocity.x)

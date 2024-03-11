@@ -16,3 +16,4 @@ res://Scenes/Levels/Build Levels/F8-G9.tscn
 res://Scenes/Levels/Build Levels/H5-H7.tscn
 res://Scripts/global_player_stats.gd
 res://Scripts/player.gd
+res://Scenes/Prefabs/Player/player_animations.tres

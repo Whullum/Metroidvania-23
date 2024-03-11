@@ -1,27 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://tyafu3ahtbak"]
+[gd_scene load_steps=11 format=3 uid="uid://tyafu3ahtbak"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yr8x4"]
+[ext_resource type="SpriteFrames" uid="uid://xshrt7d12xc6" path="res://Scenes/Prefabs/Player/player_animations.tres" id="2_57y7f"]
 [ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/Menus/HUD.tscn" id="3_spghj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7kcpe"]
-radius = 6.49351
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3xuw"]
+size = Vector2(7, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wnwei"]
+size = Vector2(9.09091, 10.3896)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
 radius = 24.3311
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekpk"]
-size = Vector2(20, 10)
+size = Vector2(21.5, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vqcd"]
-size = Vector2(10, 10)
+size = Vector2(11.5, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvyi"]
-size = Vector2(13, 8)
+size = Vector2(14.5, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
-size = Vector2(10, 14)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_etepf"]
+size = Vector2(10, 17)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -30,20 +32,24 @@ script = ExtResource("1_yr8x4")
 speed = 180.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-scale = Vector2(0.77, 0.77)
-shape = SubResource("CircleShape2D_7kcpe")
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_f3xuw")
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+position = Vector2(-2.38419e-07, 0)
 scale = Vector2(0.77, 0.77)
-shape = SubResource("CircleShape2D_7kcpe")
+shape = SubResource("RectangleShape2D_wnwei")
 
 [node name="InteractableHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 64
 
@@ -52,11 +58,13 @@ position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_dn5aj")
 
 [node name="MeleeHitbox" type="Area2D" parent="."]
+position = Vector2(4, -12)
+scale = Vector2(1.2, 2.5)
 collision_layer = 2
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox"]
-position = Vector2(15, 3)
+position = Vector2(14.25, 3)
 shape = SubResource("RectangleShape2D_2ekpk")
 disabled = true
 
@@ -65,11 +73,13 @@ process_callback = 0
 wait_time = 0.2
 
 [node name="WateringCanHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 36
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WateringCanHitbox"]
-position = Vector2(10, 3)
+position = Vector2(9.25, 3)
 shape = SubResource("RectangleShape2D_2vqcd")
 disabled = true
 
@@ -78,11 +88,13 @@ process_callback = 0
 wait_time = 0.3
 
 [node name="DigHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DigHitbox"]
-position = Vector2(11.5, 4)
+position = Vector2(10.75, 4)
 shape = SubResource("RectangleShape2D_6fvyi")
 disabled = true
 
@@ -91,17 +103,24 @@ process_callback = 0
 wait_time = 0.7
 
 [node name="GroundPoundHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 4
 
 [node name="GroundPoundCollisionShape2D" type="CollisionShape2D" parent="GroundPoundHitbox"]
-position = Vector2(0, 16)
+position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_abw1c")
 disabled = true
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_etepf")
-offset = Vector2(0, 1.5)
+[node name="CollectionHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dn5aj")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -119,12 +138,10 @@ remote_path = NodePath("../PlayerCamera")
 
 [node name="HUD" parent="." instance=ExtResource("3_spghj")]
 
-[node name="CollectionHitbox" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_dn5aj")
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_57y7f")
+animation = &"attack"
+offset = Vector2(-1, -8)
 
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]
