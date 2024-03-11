@@ -80,6 +80,8 @@ focus_neighbor_top = NodePath("../Button_Quit")
 focus_neighbor_bottom = NodePath("../Button_Settings")
 focus_next = NodePath("../Button_Settings")
 focus_previous = NodePath("../Button_Quit")
+theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
+theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Start Game"
 icon = ExtResource("3_q3rk0")
 
@@ -91,6 +93,8 @@ focus_neighbor_top = NodePath("../Button_StartGame")
 focus_neighbor_bottom = NodePath("../Button_Controls")
 focus_next = NodePath("../Button_Controls")
 focus_previous = NodePath("../Button_StartGame")
+theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
+theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Settings"
 icon = ExtResource("3_q3rk0")
 
@@ -102,6 +106,8 @@ focus_neighbor_top = NodePath("../Button_Settings")
 focus_neighbor_bottom = NodePath("../Button_Credits")
 focus_next = NodePath("../Button_Credits")
 focus_previous = NodePath("../Button_Settings")
+theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
+theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Controls"
 icon = ExtResource("3_q3rk0")
 
@@ -113,6 +119,8 @@ focus_neighbor_top = NodePath("../Button_Controls")
 focus_neighbor_bottom = NodePath("../Button_Quit")
 focus_next = NodePath("../Button_Quit")
 focus_previous = NodePath("../Button_Controls")
+theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
+theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Credits"
 icon = ExtResource("3_q3rk0")
 
@@ -124,6 +132,8 @@ focus_neighbor_top = NodePath("../Button_Credits")
 focus_neighbor_bottom = NodePath("../Button_StartGame")
 focus_next = NodePath("../Button_StartGame")
 focus_previous = NodePath("../Button_Credits")
+theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
+theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Quit"
 icon = ExtResource("3_q3rk0")
 

@@ -1,7 +1,8 @@
 res://Scenes/Menus/MainMenu.tscn
+res://Scenes/Prefabs/Player/player_animations.tres
+res://Scripts/UI/main_menu.gd
 res://tiles.tres
 res://Scenes/Levels/Build Levels/A3-B3.tscn
-res://Scripts/UI/main_menu.gd
 res://Scenes/Prefabs/Player/player.tscn
 res://Scenes/Menus/HUD.tscn
 res://Scenes/Levels/Build Levels/C3-C5.tscn
@@ -14,6 +15,3 @@ res://Scenes/Levels/Build Levels/E8-E9.tscn
 res://Scenes/Levels/Build Levels/F4-H4.tscn
 res://Scenes/Levels/Build Levels/F8-G9.tscn
 res://Scenes/Levels/Build Levels/H5-H7.tscn
-res://Scripts/global_player_stats.gd
-res://Scripts/player.gd
-res://Scenes/Prefabs/Player/player_animations.tres
