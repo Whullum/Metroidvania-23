@@ -50,10 +50,15 @@ func _get_tilemap_node():
 			return child
 
 func _physics_process(delta):
+		
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:
 		velocity.y += gravity * delta
 		$PlayerSprite.play("jump")
+
+	if player_stats.player_health <= 0:
+		# Go to game over screen
+		return
 
 	if is_on_floor() and !$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled:
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = true

@@ -2,7 +2,7 @@ extends Control
 
 signal start_game()
 @onready var buttons_v_box = %ButtonsVBox
-@onready var start_level = preload("res://Scenes/level_1.tscn") as PackedScene
+@onready var start_level = preload("res://Scenes/Levels/Build Levels/A3-B3.tscn") as PackedScene
 @onready var load_settings = preload("res://Scenes/Menus/SettingsMenu.tscn") as PackedScene
 @onready var load_controls = preload("res://Scenes/Menus/ControlsMenu.tscn") as PackedScene
 @onready var load_credits = preload("res://Scenes/Menus/CreditsMenu.tscn") as PackedScene

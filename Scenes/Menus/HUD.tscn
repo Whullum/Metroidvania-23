@@ -20,6 +20,7 @@ grow_vertical = 2
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HealthLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -30,6 +31,7 @@ grow_vertical = 0
 text = "Health Remaining:"
 
 [node name="CollectablesLabel" type="Label" parent="CanvasLayer"]
+visible = false
 offset_right = 124.0
 offset_bottom = 23.0
 size_flags_horizontal = 0
@@ -37,6 +39,7 @@ size_flags_vertical = 8
 text = "Gems Collected:"
 
 [node name="LevelLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
