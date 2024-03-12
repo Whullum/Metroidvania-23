@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgljdnab37kcf"
-path="res://.godot/imported/cloud_3.png-13bd9d48f4e4923b30d723f30406c7b5.ctex"
+uid="uid://bunsdk4gl3ky8"
+path="res://.godot/imported/vine_middle.png-479e36623cced00785d78fd81e16573e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cloud_3.png"
-dest_files=["res://.godot/imported/cloud_3.png-13bd9d48f4e4923b30d723f30406c7b5.ctex"]
+source_file="res://Art/interactables/vine_middle.png"
+dest_files=["res://.godot/imported/vine_middle.png-479e36623cced00785d78fd81e16573e.ctex"]
 
 [params]
 

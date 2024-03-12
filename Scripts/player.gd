@@ -62,6 +62,8 @@ func _physics_process(delta):
 
 	if is_on_floor() and !$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled:
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = true
+		$PlayerSprite.visible = true
+		$ShovelSprite.visible = false
 		
 	if is_on_floor() or is_climbing:
 		has_double_jump = true
@@ -91,7 +93,9 @@ func _physics_process(delta):
 		$MeleeHitbox/CollisionShape2D.disabled = false
 		is_attacking = true
 		$MeleeHitbox/MeleeHitboxTimer.start()
-		$PlayerSprite.play("attack")
+		$PlayerSprite.visible = false
+		$AttackSprite.visible = true
+		$AttackSprite.play("attack")
 		
 	# Handle watering can action
 	if Input.is_action_just_pressed("watering_can") and is_on_floor():
@@ -113,6 +117,9 @@ func _physics_process(delta):
 	# Handle ground pound action
 	if Input.is_action_just_pressed("dig_action") and !is_on_floor():
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = false
+		$PlayerSprite.visible = false
+		$ShovelSprite.visible = true
+		$ShovelSprite.play("shovel")
 	# 	perhaps add a damage multiplier for every enemy hit while ground pounding
 	
 	# Handle moving through one way platforms
@@ -141,8 +148,11 @@ func _physics_process(delta):
 			velocity.x = direction * speed
 			if direction == -1:
 				$PlayerSprite.flip_h = true
+				$AttackSprite.flip_h = true
 			else:
 				$PlayerSprite.flip_h = false
+				$AttackSprite.flip_h = false
+			$AttackSprite.position.x = abs($AttackSprite.position.x) * direction
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
 			$PlayerSprite.play("idle")
@@ -166,6 +176,8 @@ func _physics_process(delta):
 	pass
 
 func _on_melee_hitbox_timer_timeout():
+	$AttackSprite.visible = false
+	$PlayerSprite.visible = true
 	$MeleeHitbox/CollisionShape2D.disabled = true
 	is_attacking = false
 

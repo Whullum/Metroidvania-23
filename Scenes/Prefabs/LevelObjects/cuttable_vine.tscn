@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk6l60ti8nrsk"]
+[gd_scene load_steps=5 format=3 uid="uid://dk6l60ti8nrsk"]
 
 [ext_resource type="Script" path="res://Scripts/Level/cuttable_vine.gd" id="1_8sf7h"]
-[ext_resource type="Texture2D" uid="uid://bs0ykrh1xfne2" path="res://1-Bit Platformer Pack/Tiles/Default/tile_0035.png" id="1_iy7jw"]
+[ext_resource type="Texture2D" uid="uid://0pru4ugvtvll" path="res://Art/interactables/bramble_1.png" id="2_1ruan"]
+[ext_resource type="Texture2D" uid="uid://c3o0bjitbtxo7" path="res://Art/interactables/bramble_2.png" id="3_jgsps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqsd6"]
 size = Vector2(16, 64)
@@ -10,11 +11,6 @@ size = Vector2(16, 64)
 collision_layer = 9
 collision_mask = 3
 script = ExtResource("1_8sf7h")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3.8147e-06)
-scale = Vector2(1, 3.5)
-texture = ExtResource("1_iy7jw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_oqsd6")
@@ -26,5 +22,21 @@ gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_oqsd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 24)
+texture = ExtResource("2_1ruan")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 8)
+texture = ExtResource("3_jgsps")
+
+[node name="Sprite2D3" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -8)
+texture = ExtResource("2_1ruan")
+
+[node name="Sprite2D4" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, -24)
+texture = ExtResource("3_jgsps")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

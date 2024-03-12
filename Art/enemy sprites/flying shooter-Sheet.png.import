@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr2bhdjed2yng"
-path="res://.godot/imported/cloud_2.png-ea0735ad1b9aab15601adb568ab4d620.ctex"
+uid="uid://c7ppifmxjf065"
+path="res://.godot/imported/flying shooter-Sheet.png-4d3f9d545d276ad6a7a31f72343b9dbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cloud_2.png"
-dest_files=["res://.godot/imported/cloud_2.png-ea0735ad1b9aab15601adb568ab4d620.ctex"]
+source_file="res://Art/enemy sprites/flying shooter-Sheet.png"
+dest_files=["res://.godot/imported/flying shooter-Sheet.png-4d3f9d545d276ad6a7a31f72343b9dbd.ctex"]
 
 [params]
 

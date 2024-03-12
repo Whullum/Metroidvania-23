@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://khe50qxym6vi"
-path="res://.godot/imported/health_empty.png-632e2ddf639b24d222b70e971daa9b0d.ctex"
+uid="uid://doebrvig4mppj"
+path="res://.godot/imported/vine_inactive.png-91e2a5f40855e10f38d9a4e7f3821659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/health_empty.png"
-dest_files=["res://.godot/imported/health_empty.png-632e2ddf639b24d222b70e971daa9b0d.ctex"]
+source_file="res://Art/interactables/vine_inactive.png"
+dest_files=["res://.godot/imported/vine_inactive.png-91e2a5f40855e10f38d9a4e7f3821659.ctex"]
 
 [params]
 

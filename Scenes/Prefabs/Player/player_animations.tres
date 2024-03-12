@@ -1,23 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://xshrt7d12xc6"]
+[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://xshrt7d12xc6"]
 
-[ext_resource type="Texture2D" uid="uid://dmcbmisw8b6ys" path="res://Art/mc sprites/robot up attack-Sheet.png" id="1_q2hqs"]
 [ext_resource type="Texture2D" uid="uid://dk4po40sptwdr" path="res://Art/mc sprites/robot sprite sheet.png" id="2_88du7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlin3"]
-atlas = ExtResource("1_q2hqs")
-region = Rect2(0, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oeoll"]
-atlas = ExtResource("1_q2hqs")
-region = Rect2(64, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bgbvn"]
-atlas = ExtResource("1_q2hqs")
-region = Rect2(128, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iyqw2"]
-atlas = ExtResource("1_q2hqs")
-region = Rect2(192, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8ols"]
 atlas = ExtResource("2_88du7")
@@ -81,23 +64,6 @@ region = Rect2(96, 32, 32, 32)
 
 [resource]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dlin3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oeoll")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bgbvn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iyqw2")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l8ols")

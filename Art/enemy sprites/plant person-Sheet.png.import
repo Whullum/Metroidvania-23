@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd1db3s7hsewd"
-path="res://.godot/imported/cloud_1.png-6b4adf5bd0009af9d5b9536b2fee549c.ctex"
+uid="uid://dp4qh16t2kdii"
+path="res://.godot/imported/plant person-Sheet.png-f90b983f81c6bbfa9af929079ddd9b7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/cloud_1.png"
-dest_files=["res://.godot/imported/cloud_1.png-6b4adf5bd0009af9d5b9536b2fee549c.ctex"]
+source_file="res://Art/enemy sprites/plant person-Sheet.png"
+dest_files=["res://.godot/imported/plant person-Sheet.png-f90b983f81c6bbfa9af929079ddd9b7a.ctex"]
 
 [params]
 

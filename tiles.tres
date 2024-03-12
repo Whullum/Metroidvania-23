@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dl1v2g37rekyr"]
 
 [ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="1_3uayf"]
-[ext_resource type="Texture2D" uid="uid://cb1s8xxbenhfd" path="res://Art/v1_spritesheet.png" id="1_paqb4"]
+[ext_resource type="Texture2D" uid="uid://cb1s8xxbenhfd" path="res://Art/interactables/v1_spritesheet.png" id="1_paqb4"]
 [ext_resource type="Texture2D" uid="uid://dk4po40sptwdr" path="res://Art/mc sprites/robot sprite sheet.png" id="3_bte4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ksk85"]

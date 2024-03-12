@@ -1,24 +1,24 @@
 [gd_scene load_steps=6 format=3 uid="uid://cy564bg3nrhuj"]
 
 [ext_resource type="Script" path="res://Scripts/Level/coin.gd" id="1_hj0fu"]
-[ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="2_ekmnn"]
+[ext_resource type="Texture2D" uid="uid://de0qie4sxdomf" path="res://Art/interactables/droplet_frame_1.png" id="2_ntgt0"]
+[ext_resource type="Texture2D" uid="uid://c1ptlaq4dgb41" path="res://Art/interactables/droplet_frame_2.png" id="3_5a7jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyw3n"]
 size = Vector2(14, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkdkk"]
-atlas = ExtResource("2_ekmnn")
-region = Rect2(34, 85, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3mwlk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dkdkk")
+"texture": ExtResource("2_ntgt0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5a7jc")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Coin" type="Area2D"]
@@ -31,5 +31,6 @@ shape = SubResource("RectangleShape2D_qyw3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollectionHitbox"]
 sprite_frames = SubResource("SpriteFrames_3mwlk")
+frame_progress = 0.0302353
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

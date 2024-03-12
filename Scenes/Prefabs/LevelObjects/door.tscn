@@ -1,20 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb27whjxdt6me"]
+[gd_scene load_steps=5 format=3 uid="uid://cb27whjxdt6me"]
 
-[ext_resource type="Texture2D" uid="uid://do4dqs14geydu" path="res://1-Bit Platformer Pack/Tilemap/monochrome_tilemap_transparent.png" id="1_ed3ch"]
 [ext_resource type="Script" path="res://Scripts/Level/door.gd" id="1_ycill"]
+[ext_resource type="Texture2D" uid="uid://dn7cxbsg4a7fl" path="res://Art/interactables/player_door.png" id="2_ipr3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipgw5"]
 size = Vector2(14, 14)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fb0nb"]
-atlas = ExtResource("1_ed3ch")
-region = Rect2(323, 34, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rucbv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fb0nb")
+"texture": ExtResource("2_ipr3q")
 }],
 "loop": true,
 "name": &"default",

@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://tyafu3ahtbak"]
+[gd_scene load_steps=22 format=3 uid="uid://tyafu3ahtbak"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yr8x4"]
 [ext_resource type="SpriteFrames" uid="uid://xshrt7d12xc6" path="res://Scenes/Prefabs/Player/player_animations.tres" id="2_57y7f"]
 [ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/Menus/HUD.tscn" id="3_spghj"]
+[ext_resource type="Texture2D" uid="uid://bq0t2bdvmqqnk" path="res://Art/mc sprites/robot attack-Sheet.png" id="4_5ebql"]
+[ext_resource type="Texture2D" uid="uid://b4pvytost14tn" path="res://Art/mc sprites/shovel attack-Sheet.png" id="4_y7405"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3xuw"]
 size = Vector2(7, 8)
@@ -23,7 +25,72 @@ size = Vector2(11.5, 10)
 size = Vector2(14.5, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
-size = Vector2(10, 17)
+size = Vector2(7, 6.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoydk"]
+atlas = ExtResource("4_y7405")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44x68"]
+atlas = ExtResource("4_y7405")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8kua"]
+atlas = ExtResource("4_y7405")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5mjfs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoydk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44x68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8kua")
+}],
+"loop": false,
+"name": &"shovel",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7k4g"]
+atlas = ExtResource("4_5ebql")
+region = Rect2(0, 4, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c814c"]
+atlas = ExtResource("4_5ebql")
+region = Rect2(64, 4, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28h57"]
+atlas = ExtResource("4_5ebql")
+region = Rect2(128, 4, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbpqx"]
+atlas = ExtResource("4_5ebql")
+region = Rect2(192, 4, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lf3e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7k4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c814c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28h57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbpqx")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -109,7 +176,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="GroundPoundCollisionShape2D" type="CollisionShape2D" parent="GroundPoundHitbox"]
-position = Vector2(0, 14.5)
+position = Vector2(0, 9.25)
 shape = SubResource("RectangleShape2D_abw1c")
 disabled = true
 
@@ -139,9 +206,23 @@ remote_path = NodePath("../PlayerCamera")
 [node name="HUD" parent="." instance=ExtResource("3_spghj")]
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0)
 sprite_frames = ExtResource("2_57y7f")
-animation = &"attack"
+animation = &"idle"
 offset = Vector2(-1, -8)
+
+[node name="ShovelSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(2, 10)
+sprite_frames = SubResource("SpriteFrames_5mjfs")
+animation = &"shovel"
+offset = Vector2(-1, -8)
+
+[node name="AttackSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(16, -4)
+sprite_frames = SubResource("SpriteFrames_lf3e7")
+animation = &"attack"
 
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8r2hw3wuoevh"
-path="res://.godot/imported/health_full.png-948cdc892e92d7e668c74b32cf51c8d1.ctex"
+uid="uid://b7uv8w45wcgoc"
+path="res://.godot/imported/slug-Sheet.png-c271c0a441d9c4bb27e34fb59b6916a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/health_full.png"
-dest_files=["res://.godot/imported/health_full.png-948cdc892e92d7e668c74b32cf51c8d1.ctex"]
+source_file="res://Art/enemy sprites/slug-Sheet.png"
+dest_files=["res://.godot/imported/slug-Sheet.png-c271c0a441d9c4bb27e34fb59b6916a3.ctex"]
 
 [params]
 

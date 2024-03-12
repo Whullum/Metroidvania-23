@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb1s8xxbenhfd"
-path="res://.godot/imported/v1_spritesheet.png-6592219b5762f917d6c23b01e4af8275.ctex"
+uid="uid://bwhg47a55preo"
+path="res://.godot/imported/rock_plaque.png-a507b1d1a6edf6f39dc4a26823f5b0aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/v1_spritesheet.png"
-dest_files=["res://.godot/imported/v1_spritesheet.png-6592219b5762f917d6c23b01e4af8275.ctex"]
+source_file="res://Art/decor_sprites/rock_plaque.png"
+dest_files=["res://.godot/imported/rock_plaque.png-a507b1d1a6edf6f39dc4a26823f5b0aa.ctex"]
 
 [params]
 
