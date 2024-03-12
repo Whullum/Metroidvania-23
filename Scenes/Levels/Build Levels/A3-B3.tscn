@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bgw13lmcn5clc"]
+[gd_scene load_steps=10 format=3 uid="uid://bgw13lmcn5clc"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_0u84m"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_e60di"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="6_0c6nf"]
 [ext_resource type="PackedScene" uid="uid://ct0ymg0e2dgvf" path="res://Scenes/Prefabs/Enemies/patrol_enemy.tscn" id="7_3u1go"]
 [ext_resource type="PackedScene" uid="uid://feq17rj8byk4" path="res://Scenes/Prefabs/Enemies/flying_enemy.tscn" id="7_820xc"]
+[ext_resource type="PackedScene" uid="uid://b3m1v7ukjerub" path="res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn" id="7_kgmpo"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0u84m")
@@ -49,3 +50,6 @@ position = Vector2(389, 356)
 
 [node name="PatrolEnemy" parent="." instance=ExtResource("7_3u1go")]
 position = Vector2(336, 384)
+
+[node name="StationaryShootingEnemy" parent="." instance=ExtResource("7_kgmpo")]
+position = Vector2(464, 384)

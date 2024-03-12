@@ -31,3 +31,5 @@ res://Scripts/Enemies/stationary_shooting_enemy.gd
 res://Scenes/Prefabs/Enemies/enemy_bullet.tscn
 res://Scripts/Enemies/enemy_bullet.gd
 res://Scripts/Enemies/enemy_base.gd
+res://UI Assets/Themes/default_theme.tres
+res://Scripts/Level/level.gd
