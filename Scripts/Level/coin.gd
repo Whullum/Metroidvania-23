@@ -9,6 +9,7 @@ var player_position: Vector2
 signal water_collected
 
 func _ready():
+	$CollectionHitbox/AnimatedSprite2D.play("idle")
 	pass
 	
 func _physics_process(delta):

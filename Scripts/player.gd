@@ -149,9 +149,11 @@ func _physics_process(delta):
 			if direction == -1:
 				$PlayerSprite.flip_h = true
 				$AttackSprite.flip_h = true
+				$ShovelSprite.flip_h = true
 			else:
 				$PlayerSprite.flip_h = false
 				$AttackSprite.flip_h = false
+				$ShovelSprite.flip_h = false
 			$AttackSprite.position.x = abs($AttackSprite.position.x) * direction
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)

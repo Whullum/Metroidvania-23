@@ -1,4 +1,5 @@
 AnimatedSprite2D
+Timer
 AnimationPlayer
 GridContainer
 MarginContainer
@@ -11,4 +12,3 @@ VSeparator
 HSeparator
 Label
 TextureRect
-HSlider

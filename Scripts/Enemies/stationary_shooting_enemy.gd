@@ -10,6 +10,7 @@ func _ready():
 	$Timer.start()
 	$Timer.set_paused(true)
 	player = get_parent().get_node("Player")
+	$AnimatedSprite2D.play("idle")
 	pass
 
 func _physics_process(delta):
@@ -22,6 +23,7 @@ func _shoot_player():
 	spawned_bullet.position = global_position
 	spawned_bullet._set_bullet_velocity(player_position, global_position)
 	get_parent().add_child(spawned_bullet)
+	$AnimatedSprite2D.play("shooting")
 	pass
 
 func _angle_towards_player():
@@ -42,12 +44,17 @@ func _on_detection_area_area_exited(area):
 		#print_debug("Player exited range")
 		is_player_within_range = false
 		$Timer.set_paused(true)
+		$AnimatedSprite2D.play("idle")
 		pass
 	pass # Replace with function body.
 
 func _on_enemy_damage_hitbox_area_entered(area):
-	if area.name == "MeleeHitbox":
+	if area.name == "MeleeHitbox" or area.name == "GroundPoundHitbox":
+		$AnimatedSprite2D.play("damaged")
 		print_debug(name + " took damage!")
+		if (health <= 1):
+			$AnimatedSprite2D.play("death")
+		await $AnimatedSprite2D.animation_finished
 		_take_damage()
 
 func _on_timer_timeout():

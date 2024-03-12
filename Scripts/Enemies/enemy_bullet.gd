@@ -5,7 +5,7 @@ extends CharacterBody2D
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		queue_free()
+		_play_death_animation()
 	pass
 
 func _set_bullet_velocity(target_position: Vector2, current_position: Vector2):
@@ -13,12 +13,17 @@ func _set_bullet_velocity(target_position: Vector2, current_position: Vector2):
 	pass
 
 func _on_timer_timeout():
-	queue_free()
+	_play_death_animation()
 	pass # Replace with function body.
 
 func _on_area_2d_area_entered(area):
-	queue_free()
+	_play_death_animation()
 
 func _on_area_2d_body_entered(body):
 	if body is CharacterBody2D and body.name == "Player":
-		queue_free()
+		_play_death_animation()
+
+func _play_death_animation():
+	$AnimatedSprite2D.play("death")
+	await $AnimatedSprite2D.animation_finished
+	queue_free()

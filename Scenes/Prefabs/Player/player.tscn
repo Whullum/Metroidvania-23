@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://bq0t2bdvmqqnk" path="res://Art/mc sprites/robot attack-Sheet.png" id="4_5ebql"]
 [ext_resource type="Texture2D" uid="uid://b4pvytost14tn" path="res://Art/mc sprites/shovel attack-Sheet.png" id="4_y7405"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
+radius = 24.3311
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3xuw"]
 size = Vector2(7, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnwei"]
 size = Vector2(9.09091, 10.3896)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
-radius = 24.3311
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ekpk"]
 size = Vector2(21.5, 10)
@@ -98,6 +98,15 @@ collision_mask = 325
 script = ExtResource("1_yr8x4")
 speed = 180.0
 
+[node name="CollectionHitbox" type="Area2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(2, 2)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_dn5aj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 scale = Vector2(2, 2)
@@ -180,15 +189,6 @@ position = Vector2(0, 9.25)
 shape = SubResource("RectangleShape2D_abw1c")
 disabled = true
 
-[node name="CollectionHitbox" type="Area2D" parent="."]
-position = Vector2(1, -4)
-scale = Vector2(2, 2)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_dn5aj")
-
 [node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 process_callback = 0
@@ -224,6 +224,8 @@ position = Vector2(16, -4)
 sprite_frames = SubResource("SpriteFrames_lf3e7")
 animation = &"attack"
 
+[connection signal="area_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_entered"]
+[connection signal="area_exited" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_exited"]
 [connection signal="area_entered" from="PlayerHitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="area_entered" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_entered"]
 [connection signal="area_exited" from="InteractableHitbox" to="." method="_on_interactable_hitbox_area_exited"]
@@ -231,5 +233,3 @@ animation = &"attack"
 [connection signal="timeout" from="WateringCanHitbox/WateringCanTimer" to="." method="_on_watering_can_timer_timeout"]
 [connection signal="timeout" from="DigHitbox/DigHitboxTimer" to="." method="_on_dig_hitbox_timer_timeout"]
 [connection signal="area_entered" from="GroundPoundHitbox" to="." method="_on_ground_pound_hitbox_area_entered"]
-[connection signal="area_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_entered"]
-[connection signal="area_exited" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_exited"]

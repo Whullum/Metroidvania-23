@@ -13,4 +13,3 @@ func _take_damage():
 	if health <= 0:
 		queue_free()
 	pass
-

@@ -22,3 +22,12 @@ res://Scenes/Prefabs/LevelObjects/dig_site.tscn
 res://Scenes/Prefabs/LevelObjects/door.tscn
 res://Scenes/Prefabs/LevelObjects/watering_spot.tscn
 res://Scripts/player.gd
+res://Scenes/Prefabs/Enemies/flying_enemy.tscn
+res://Scripts/Enemies/patrol_enemy.gd
+res://Scripts/Level/coin.gd
+res://Scenes/Prefabs/Enemies/patrol_enemy.tscn
+res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn
+res://Scripts/Enemies/stationary_shooting_enemy.gd
+res://Scenes/Prefabs/Enemies/enemy_bullet.tscn
+res://Scripts/Enemies/enemy_bullet.gd
+res://Scripts/Enemies/enemy_base.gd

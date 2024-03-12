@@ -17,7 +17,7 @@ animations = [{
 "texture": ExtResource("3_5a7jc")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 3.0
 }]
 
@@ -31,6 +31,7 @@ shape = SubResource("RectangleShape2D_qyw3n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollectionHitbox"]
 sprite_frames = SubResource("SpriteFrames_3mwlk")
-frame_progress = 0.0302353
+animation = &"idle"
+frame_progress = 0.940113
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

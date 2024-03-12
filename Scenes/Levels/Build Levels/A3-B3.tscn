@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgw13lmcn5clc"]
+[gd_scene load_steps=9 format=3 uid="uid://bgw13lmcn5clc"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_0u84m"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_e60di"]
@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/Prefabs/LevelObjects/door.tscn" id="4_8mwy5"]
 [ext_resource type="PackedScene" uid="uid://cy564bg3nrhuj" path="res://Scenes/Prefabs/LevelObjects/coin.tscn" id="5_rb0lq"]
 [ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="6_0c6nf"]
+[ext_resource type="PackedScene" uid="uid://ct0ymg0e2dgvf" path="res://Scenes/Prefabs/Enemies/patrol_enemy.tscn" id="7_3u1go"]
+[ext_resource type="PackedScene" uid="uid://feq17rj8byk4" path="res://Scenes/Prefabs/Enemies/flying_enemy.tscn" id="7_820xc"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0u84m")
-levelNumber = 1
 
 [node name="Doors" type="Node" parent="."]
 
@@ -42,3 +43,9 @@ layer_0/tile_data = PackedInt32Array(1507328, 0, 6, 0, 327680, 6, 65536, 327680,
 
 [node name="Player" parent="." instance=ExtResource("3_kfdtn")]
 position = Vector2(72, 372)
+
+[node name="FlyingEnemy" parent="." instance=ExtResource("7_820xc")]
+position = Vector2(389, 356)
+
+[node name="PatrolEnemy" parent="." instance=ExtResource("7_3u1go")]
+position = Vector2(336, 384)
