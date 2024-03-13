@@ -12,7 +12,7 @@ func _ready():
 	audio_player.volume_db = 1
 	audio_player. pitch_scale = 1
 	add_child(audio_player)
-	audio_player.play()
+	#audio_player.play()
 	pass # Replace with function body.
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,3 +27,6 @@ func _input(event):
 func _go_to_gameover():
 	get_tree().change_scene_to_file("res://Scenes/Menus/GameOver.tscn")
 	audio_player.stop()
+
+func _play_music():
+	audio_player.play()

@@ -34,18 +34,8 @@ position = Vector2(1234, 208)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(80, -384)
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(320, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
-position = Vector2(-56, 528)
-scale = Vector2(2, 2)
-texture = ExtResource("6_x0vqv")
-centered = false
-
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-304, -392)
 motion_mirroring = Vector2(640, 320)
 script = ExtResource("7_khb0m")
 
@@ -72,3 +62,14 @@ texture = ExtResource("9_xv406")
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 position = Vector2(323, 268)
 texture = ExtResource("10_m7dk0")
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(80, -384)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+position = Vector2(-56, 528)
+scale = Vector2(2, 2)
+texture = ExtResource("6_x0vqv")
+centered = false

@@ -25,3 +25,10 @@ res://Scripts/Enemies/patrol_enemy.gd
 res://Scenes/Menus/MainMenu.tscn
 res://Scripts/global.gd
 res://Scenes/Menus/HUD.tscn
+res://Scenes/Prefabs/LevelObjects/door.tscn
+res://Scripts/Level/door.gd
+res://Scenes/tutorial_text.tscn
+res://Scripts/text_hover.gd
+res://Scripts/global_player_stats.gd
+res://Scripts/Enemies/enemy_base.gd
+res://Scenes/Prefabs/LevelObjects/dig_site.tscn

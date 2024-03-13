@@ -38,7 +38,7 @@ is_spawning_right = false
 [node name="Enemies" type="Node" parent="."]
 
 [node name="StationaryShootingEnemy" parent="Enemies" instance=ExtResource("6_dttje")]
-position = Vector2(176, 520)
+position = Vector2(176, 528)
 
 [node name="FlyingEnemy" parent="Enemies" instance=ExtResource("7_fa3b4")]
 position = Vector2(176, 368)
@@ -65,16 +65,6 @@ position = Vector2(56, 416)
 position = Vector2(56, 576)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(320, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
-position = Vector2(-56, 528)
-scale = Vector2(2, 2)
-texture = ExtResource("10_ivpva")
-centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(640, 320)
@@ -103,3 +93,13 @@ texture = ExtResource("13_e0ktv")
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 position = Vector2(323, 268)
 texture = ExtResource("14_bsmie")
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+position = Vector2(-56, 528)
+scale = Vector2(2, 2)
+texture = ExtResource("10_ivpva")
+centered = false

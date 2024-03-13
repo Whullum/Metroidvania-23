@@ -62,6 +62,8 @@ func _shooting_take_damage():
 	print_debug(name + " took damage!")
 	
 	if (health <= 0):
+		GlobalPlayerStats.colleceted_water += 10
+		get_tree().current_scene._on_water_number_updated()
 		$AnimatedSprite2D.play("death")
 		await $AnimatedSprite2D.animation_finished
 		queue_free()

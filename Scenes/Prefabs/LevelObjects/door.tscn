@@ -28,5 +28,25 @@ shape = SubResource("RectangleShape2D_ipgw5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rucbv")
 
+[node name="ButtonPrompt" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, 8)
+scale = Vector2(0.491044, 0.692871)
+
+[node name="Panel" type="Panel" parent="ButtonPrompt"]
+offset_left = -96.7882
+offset_top = -48.4265
+offset_right = -56.7882
+offset_bottom = -8.4265
+scale = Vector2(5, 0.6)
+
+[node name="Label" type="Label" parent="ButtonPrompt"]
+offset_left = -77.7883
+offset_top = -48.4265
+offset_right = 89.2117
+offset_bottom = -25.4265
+text = "Press 'E' to enter"
+horizontal_alignment = 1
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -125,6 +125,9 @@ func _patrol_take_damage():
 	health -= 1
 	
 	if health <= 0:
+		GlobalPlayerStats.colleceted_water += 10
+		get_tree().current_scene._on_water_number_updated()
+		
 		current_orders = ENEMY_ORDERS.DEATH
 		$AnimatedSprite2D.play("death")
 		await $AnimatedSprite2D.animation_finished

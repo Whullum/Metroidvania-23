@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c545xndr755k2"]
+[gd_scene load_steps=14 format=3 uid="uid://c545xndr755k2"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_rvque"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_rycso"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3m1v7ukjerub" path="res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn" id="6_wij8h"]
 [ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="7_gqtp3"]
 [ext_resource type="Texture2D" uid="uid://1u074m5a1qb0" path="res://Art/backgrounds/treeline_parallax.png" id="8_hbpr0"]
+[ext_resource type="PackedScene" uid="uid://y83fg7f8ybqt" path="res://Scenes/tutorial_text.tscn" id="8_kojmo"]
 [ext_resource type="Script" path="res://Scripts/move_clouds.gd" id="9_wvbkr"]
 [ext_resource type="Texture2D" uid="uid://cd1db3s7hsewd" path="res://Art/backgrounds/cloud_1.png" id="10_t387e"]
 [ext_resource type="Texture2D" uid="uid://cr2bhdjed2yng" path="res://Art/backgrounds/cloud_2.png" id="11_m8ex0"]
@@ -69,18 +70,28 @@ position = Vector2(128, 352)
 [node name="StationaryShootingEnemy2" parent="Enemies" instance=ExtResource("6_wij8h")]
 position = Vector2(640, 352)
 
+[node name="TutorialText2" parent="." instance=ExtResource("8_kojmo")]
+
+[node name="Node2D" parent="TutorialText2" index="0"]
+position = Vector2(168, -8)
+
+[node name="Panel" parent="TutorialText2/Node2D" index="0"]
+offset_left = 24.0
+offset_top = 264.0
+offset_right = 64.0
+offset_bottom = 304.0
+scale = Vector2(6.70543, 1.4093)
+
+[node name="Label" parent="TutorialText2/Node2D" index="1"]
+offset_left = 44.0
+offset_top = 264.0
+offset_right = 266.0
+offset_bottom = 313.0
+text = "Press 'L' to dig
+Press 'L' in air to air attack"
+horizontal_alignment = 1
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(72, -120)
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(320, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
-position = Vector2(-56, 528)
-scale = Vector2(2, 2)
-texture = ExtResource("8_hbpr0")
-centered = false
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-72, -144)
@@ -110,3 +121,16 @@ texture = ExtResource("11_m8ex0")
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Clouds"]
 position = Vector2(323, 268)
 texture = ExtResource("12_eg7my")
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(72, -120)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+position = Vector2(-56, 528)
+scale = Vector2(2, 2)
+texture = ExtResource("8_hbpr0")
+centered = false
+
+[editable path="TutorialText2"]

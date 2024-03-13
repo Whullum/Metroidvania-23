@@ -13,6 +13,8 @@ func _ready() -> void:
 func _on_start_game_button_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
 	start_game.emit()
+	GlobalPlayerStats._reset_stats()
+	Global._play_music()
 	hide()
 	
 func _on_settings_button_pressed() -> void:

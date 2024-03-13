@@ -21,10 +21,10 @@ func _on_door_player_entered(connectingScene, connecting_door):
 	get_tree().change_scene_to_file(connectingScene)
 
 func _on_water_number_updated():
-	$Player/HUD/CanvasLayer/CollectablesLabel.text = "Collected Water: " + str(GlobalPlayerStats.colleceted_water)
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Collectables/HBoxContainer/WaterLabel.text = "Collected Water: "  + str(GlobalPlayerStats.colleceted_water)
 
 func _on_player_take_damage():
-	$Player/HUD/CanvasLayer/HealthLabel.text = "HealthRemaining: " + str(GlobalPlayerStats.player_health)
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HealthLabel.text = "HealthRemaining: " + str(GlobalPlayerStats.player_health) + "/5"
 	
 	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = true
 	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = true
