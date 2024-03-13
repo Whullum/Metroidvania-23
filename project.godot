@@ -27,7 +27,6 @@ window/size/viewport_width=1600
 window/size/viewport_height=900
 window/size/initial_position_type=2
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -107,3 +106,4 @@ restart_level={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.298039, 0.568627, 0.988235, 1)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhdhbv11b3npt"]
+[gd_scene load_steps=7 format=3 uid="uid://dhdhbv11b3npt"]
 
 [ext_resource type="Theme" uid="uid://b12ejvq36xstr" path="res://UI Assets/Themes/default_theme.tres" id="1_wvgbw"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="2_xy8w6"]
 [ext_resource type="Texture2D" uid="uid://bboqudvx15vm6" path="res://UI Assets/Arrow.svg" id="3_q3rk0"]
 [ext_resource type="Texture2D" uid="uid://5x3g026r5i7y" path="res://UI Assets/mountains-7728691_1920.png" id="3_rbdux"]
 [ext_resource type="Texture2D" uid="uid://cqsus7jrc1g3w" path="res://UI Assets/Robotanical_Logo.png" id="4_j46oq"]
+[ext_resource type="AudioStream" uid="uid://f1aefsgm26aw" path="res://Audio/ancient-garden-menu-v1 (1).mp3" id="6_ni575"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -136,6 +137,10 @@ theme_override_colors/font_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 theme_override_colors/icon_hover_color = Color(0.635294, 0.403922, 0.168627, 1)
 text = "Quit"
 icon = ExtResource("3_q3rk0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ni575")
+autoplay = true
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsVBox/Button_StartGame" to="." method="_on_start_game_button_pressed"]

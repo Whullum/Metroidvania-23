@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://tyafu3ahtbak"]
+[gd_scene load_steps=23 format=3 uid="uid://tyafu3ahtbak"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yr8x4"]
 [ext_resource type="SpriteFrames" uid="uid://xshrt7d12xc6" path="res://Scenes/Prefabs/Player/player_animations.tres" id="2_57y7f"]
 [ext_resource type="PackedScene" uid="uid://b4qer54qbw4f1" path="res://Scenes/Menus/HUD.tscn" id="3_spghj"]
 [ext_resource type="Texture2D" uid="uid://bq0t2bdvmqqnk" path="res://Art/mc sprites/robot attack-Sheet.png" id="4_5ebql"]
 [ext_resource type="Texture2D" uid="uid://b4pvytost14tn" path="res://Art/mc sprites/shovel attack-Sheet.png" id="4_y7405"]
+[ext_resource type="Texture2D" uid="uid://maj3iequ3l8s" path="res://Art/mc sprites/watering can.png" id="6_snend"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
 radius = 24.3311
@@ -22,7 +23,7 @@ size = Vector2(21.5, 10)
 size = Vector2(11.5, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fvyi"]
-size = Vector2(14.5, 8)
+size = Vector2(7, 6.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_abw1c"]
 size = Vector2(7, 6.5)
@@ -170,7 +171,7 @@ collision_layer = 2
 collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DigHitbox"]
-position = Vector2(10.75, 4)
+position = Vector2(0, 9.25)
 shape = SubResource("RectangleShape2D_6fvyi")
 disabled = true
 
@@ -190,7 +191,8 @@ shape = SubResource("RectangleShape2D_abw1c")
 disabled = true
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+modulate = Color(0.101961, 0.780392, 1, 1)
+zoom = Vector2(4, 4)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
@@ -208,7 +210,9 @@ remote_path = NodePath("../PlayerCamera")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = ExtResource("2_57y7f")
-animation = &"idle"
+animation = &"jump"
+frame = 4
+frame_progress = 1.0
 offset = Vector2(-1, -8)
 
 [node name="ShovelSprite" type="AnimatedSprite2D" parent="."]
@@ -223,6 +227,11 @@ visible = false
 position = Vector2(16, -4)
 sprite_frames = SubResource("SpriteFrames_lf3e7")
 animation = &"attack"
+
+[node name="WateringCan" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(20, 1)
+texture = ExtResource("6_snend")
 
 [connection signal="area_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_entered"]
 [connection signal="area_exited" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_exited"]

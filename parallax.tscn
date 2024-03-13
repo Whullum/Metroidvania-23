@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjtj0w1f7nthy"]
+
+[ext_resource type="Texture2D" uid="uid://d0rba108eqv2m" path="res://UI Assets/button.svg" id="1_yuesm"]
+[ext_resource type="Texture2D" uid="uid://1u074m5a1qb0" path="res://Art/backgrounds/treeline_parallax.png" id="2_eyvfp"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+follow_viewport_enabled = true
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0.01)
+motion_mirroring = Vector2(233.11, 243.515)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+modulate = Color(0.34902, 0.533333, 0.937255, 1)
+scale = Vector2(10, 10)
+texture = ExtResource("1_yuesm")
+centered = false
+
+[node name="Tree" type="ParallaxLayer" parent="."]
+position = Vector2(0, 50)
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(160, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tree"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_eyvfp")
+centered = false

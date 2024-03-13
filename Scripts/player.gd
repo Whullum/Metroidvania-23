@@ -54,7 +54,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor() and !is_climbing:
 		velocity.y += gravity * delta
-		$PlayerSprite.play("jump")
+		#$PlayerSprite.play("jump")
 
 	if player_stats.player_health <= 0:
 		# Go to game over screen
@@ -67,25 +67,6 @@ func _physics_process(delta):
 		
 	if is_on_floor() or is_climbing:
 		has_double_jump = true
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_climbing):
-		if is_climbing:
-			velocity.y = jump_velocity_from_climb
-		if is_on_floor():
-			velocity.y = jump_velocity
-	
-	if Input.is_action_just_pressed("jump") and !is_on_floor():
-		if has_double_jump:
-			velocity.y = jump_velocity_double
-			has_double_jump = false
-			$PlayerSprite.play("jump")
-			pass
-		pass
-	
-	if Input.is_action_just_released("jump"):
-		velocity.y = velocity.y / 2
-		pass
 		
 	# Handle melee attacks
 	# !! WILL NEED TO CHANGE WITH KEYFRAMES ONCE ANIMATIONS GET IN !!
@@ -105,6 +86,7 @@ func _physics_process(delta):
 			$WateringCanHitbox/WateringCanTimer.start()
 			GlobalPlayerStats.colleceted_water -= 1
 			player_used_water.emit()
+			$WateringCan.visible = true
 		else:
 			print_debug("Out of water!")
 	
@@ -113,6 +95,9 @@ func _physics_process(delta):
 		$DigHitbox/CollisionShape2D.disabled = false
 		is_attacking = true
 		$DigHitbox/DigHitboxTimer.start()
+		$PlayerSprite.visible = false
+		$ShovelSprite.visible = true
+		$ShovelSprite.play("shovel")
 		
 	# Handle ground pound action
 	if Input.is_action_just_pressed("dig_action") and !is_on_floor():
@@ -144,19 +129,26 @@ func _physics_process(delta):
 	
 	if !is_attacking:
 		if direction:
-			$PlayerSprite.play("run")
 			velocity.x = direction * speed
 			if direction == -1:
 				$PlayerSprite.flip_h = true
 				$AttackSprite.flip_h = true
 				$ShovelSprite.flip_h = true
+				$WateringCan.flip_h = true
 			else:
 				$PlayerSprite.flip_h = false
 				$AttackSprite.flip_h = false
 				$ShovelSprite.flip_h = false
+				$WateringCan.flip_h = false
 			$AttackSprite.position.x = abs($AttackSprite.position.x) * direction
+			$WateringCan.position.x = abs($WateringCan.position.x) * direction
+			
+			if is_on_floor() and velocity.y == 0: 
+				$PlayerSprite.play("run")
 		else:
 			velocity.x = move_toward(velocity.x, 0, speed)
+		
+		if direction == 0 and velocity.length() == 0 and !is_attacking:
 			$PlayerSprite.play("idle")
 		
 		move_and_slide()
@@ -169,6 +161,27 @@ func _physics_process(delta):
 		$WateringCanHitbox.scale.x = abs($WateringCanHitbox.scale.x) * direction
 		$MeleeHitbox.scale.x = abs($MeleeHitbox.scale.x) * direction
 		$DigHitbox.scale.x = abs($DigHitbox.scale.x) * direction
+		
+	
+	# Handle jump.
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or is_climbing):
+		if is_climbing:
+			velocity.y = jump_velocity_from_climb
+		if is_on_floor():
+			velocity.y = jump_velocity
+		$PlayerSprite.play("jump")
+	
+	if Input.is_action_just_pressed("jump") and !is_on_floor():
+		if has_double_jump:
+			velocity.y = jump_velocity_double
+			has_double_jump = false
+			$PlayerSprite.play("jump")
+			pass
+		pass
+	
+	if Input.is_action_just_released("jump"):
+		velocity.y = velocity.y / 2
+		pass
 		
 	if abs(velocity.x) > velocity_x_clamp:
 		velocity.x = velocity_x_clamp * sign(velocity.x)
@@ -186,10 +199,14 @@ func _on_melee_hitbox_timer_timeout():
 func _on_watering_can_timer_timeout():
 	$WateringCanHitbox/CollisionShape2D.disabled = true
 	is_attacking = false
+	$WateringCan.visible = false
 
 func _on_dig_hitbox_timer_timeout():
 	$DigHitbox/CollisionShape2D.disabled = true
 	is_attacking = false
+	$PlayerSprite.visible = true
+	$ShovelSprite.visible = false
+	$ShovelSprite.play("idle")
 
 func _on_interactable_hitbox_area_entered(area):
 	if area is ClimbableVine:

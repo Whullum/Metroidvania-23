@@ -7,9 +7,9 @@ func _ready():
 	if $Player == null:
 		_spawn_player_at_door(Global.door_spawn_number)
 	
-	$Player/HUD/CanvasLayer/LevelLabel.text = "Level: " + str(levelNumber)
-	$Player/HUD/CanvasLayer/CollectablesLabel.text = "Collected Water: " + str(GlobalPlayerStats.colleceted_water)
-	$Player/HUD/CanvasLayer/HealthLabel.text = "HealthRemaining: " + str(GlobalPlayerStats.player_health)
+	#$Player/HUD/CanvasLayer/LevelLabel.text = "Level: TEST" + str(levelNumber)
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Collectables/HBoxContainer/WaterLabel.text = "Collected Water: " + str(GlobalPlayerStats.colleceted_water)
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HealthLabel.text = "HealthRemaining: " + str(GlobalPlayerStats.player_health) + "/5"
 	_setup_coins()
 	_setup_doors()
 	
@@ -25,6 +25,38 @@ func _on_water_number_updated():
 
 func _on_player_take_damage():
 	$Player/HUD/CanvasLayer/HealthLabel.text = "HealthRemaining: " + str(GlobalPlayerStats.player_health)
+	
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = true
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = true
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health3/HealthFull.visible = true
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health4/HealthFull.visible = true
+	$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health5/HealthFull.visible = true
+	
+	if GlobalPlayerStats.player_health == 4:
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = false
+	elif GlobalPlayerStats.player_health == 3:
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = false
+	elif GlobalPlayerStats.player_health == 2:
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health3/HealthFull.visible = false
+	elif GlobalPlayerStats.player_health == 1:
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health3/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health4/HealthFull.visible = false
+	else:
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health1/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health2/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health3/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health4/HealthFull.visible = false
+		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health5/HealthFull.visible = false
+		pass
+	
+	if  GlobalPlayerStats.player_health <= 0:
+		Global._go_to_gameover()
+		pass
 	pass
 
 func _on_dig_site_coin_spawned():

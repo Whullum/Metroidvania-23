@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c545xndr755k2"]
+[gd_scene load_steps=13 format=3 uid="uid://c545xndr755k2"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_rvque"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_rycso"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/Prefabs/LevelObjects/watering_spot.tscn" id="5_u2xoj"]
 [ext_resource type="PackedScene" uid="uid://b3m1v7ukjerub" path="res://Scenes/Prefabs/Enemies/stationary_shooting_enemy.tscn" id="6_wij8h"]
 [ext_resource type="PackedScene" uid="uid://dhliwxuxmyhib" path="res://Scenes/Prefabs/LevelObjects/dig_site.tscn" id="7_gqtp3"]
+[ext_resource type="Texture2D" uid="uid://1u074m5a1qb0" path="res://Art/backgrounds/treeline_parallax.png" id="8_hbpr0"]
+[ext_resource type="Script" path="res://Scripts/move_clouds.gd" id="9_wvbkr"]
+[ext_resource type="Texture2D" uid="uid://cd1db3s7hsewd" path="res://Art/backgrounds/cloud_1.png" id="10_t387e"]
+[ext_resource type="Texture2D" uid="uid://cr2bhdjed2yng" path="res://Art/backgrounds/cloud_2.png" id="11_m8ex0"]
+[ext_resource type="Texture2D" uid="uid://dgljdnab37kcf" path="res://Art/backgrounds/cloud_3.png" id="12_eg7my"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rvque")
@@ -63,3 +68,45 @@ position = Vector2(128, 352)
 
 [node name="StationaryShootingEnemy2" parent="Enemies" instance=ExtResource("6_wij8h")]
 position = Vector2(640, 352)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(72, -120)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+position = Vector2(-56, 528)
+scale = Vector2(2, 2)
+texture = ExtResource("8_hbpr0")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-72, -144)
+motion_mirroring = Vector2(640, 320)
+script = ExtResource("9_wvbkr")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(568, 184)
+texture = ExtResource("10_t387e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(480, 296)
+texture = ExtResource("11_m8ex0")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(48, 184)
+texture = ExtResource("12_eg7my")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(176, 264)
+texture = ExtResource("10_t387e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(264, 200)
+texture = ExtResource("11_m8ex0")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(323, 268)
+texture = ExtResource("12_eg7my")

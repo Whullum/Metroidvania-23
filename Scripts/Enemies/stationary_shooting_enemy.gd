@@ -16,6 +16,7 @@ func _ready():
 func _physics_process(delta):
 	if is_player_within_range:
 		player_position = player.position
+		_angle_towards_player()
 	pass
 
 func _shoot_player():
@@ -27,6 +28,10 @@ func _shoot_player():
 	pass
 
 func _angle_towards_player():
+	if position.direction_to(player_position).length() >= 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false
 	pass
 
 func _on_detection_area_area_entered(area):

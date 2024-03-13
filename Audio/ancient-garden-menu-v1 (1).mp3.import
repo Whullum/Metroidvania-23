@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f1aefsgm26aw"
+path="res://.godot/imported/ancient-garden-menu-v1 (1).mp3-f3f4e241bd4212046475a5eeee84775c.mp3str"
+
+[deps]
+
+source_file="res://Audio/ancient-garden-menu-v1 (1).mp3"
+dest_files=["res://.godot/imported/ancient-garden-menu-v1 (1).mp3-f3f4e241bd4212046475a5eeee84775c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

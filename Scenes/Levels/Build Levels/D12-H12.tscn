@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dibsop8i6imfa"]
+[gd_scene load_steps=11 format=3 uid="uid://dibsop8i6imfa"]
 
 [ext_resource type="Script" path="res://Scripts/Level/level.gd" id="1_p25gj"]
 [ext_resource type="TileSet" uid="uid://dl1v2g37rekyr" path="res://tiles.tres" id="2_oj04t"]
 [ext_resource type="PackedScene" uid="uid://cb27whjxdt6me" path="res://Scenes/Prefabs/LevelObjects/door.tscn" id="3_ad3al"]
 [ext_resource type="PackedScene" uid="uid://cmuklm5sd2dmq" path="res://Scenes/Prefabs/LevelObjects/watering_spot.tscn" id="4_undqq"]
 [ext_resource type="PackedScene" uid="uid://dk6l60ti8nrsk" path="res://Scenes/Prefabs/LevelObjects/cuttable_vine.tscn" id="5_rarnf"]
+[ext_resource type="Texture2D" uid="uid://1u074m5a1qb0" path="res://Art/backgrounds/treeline_parallax.png" id="6_x0vqv"]
+[ext_resource type="Script" path="res://Scripts/move_clouds.gd" id="7_khb0m"]
+[ext_resource type="Texture2D" uid="uid://cd1db3s7hsewd" path="res://Art/backgrounds/cloud_1.png" id="8_bu5sh"]
+[ext_resource type="Texture2D" uid="uid://cr2bhdjed2yng" path="res://Art/backgrounds/cloud_2.png" id="9_xv406"]
+[ext_resource type="Texture2D" uid="uid://dgljdnab37kcf" path="res://Art/backgrounds/cloud_3.png" id="10_m7dk0"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_p25gj")
@@ -26,3 +31,44 @@ position = Vector2(712, 240)
 
 [node name="CuttableVine" parent="." instance=ExtResource("5_rarnf")]
 position = Vector2(1234, 208)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(80, -384)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(320, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Trees"]
+position = Vector2(-56, 528)
+scale = Vector2(2, 2)
+texture = ExtResource("6_x0vqv")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 320)
+script = ExtResource("7_khb0m")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(568, 184)
+texture = ExtResource("8_bu5sh")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(480, 296)
+texture = ExtResource("9_xv406")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(48, 184)
+texture = ExtResource("10_m7dk0")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(176, 264)
+texture = ExtResource("8_bu5sh")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(264, 200)
+texture = ExtResource("9_xv406")
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+position = Vector2(323, 268)
+texture = ExtResource("10_m7dk0")

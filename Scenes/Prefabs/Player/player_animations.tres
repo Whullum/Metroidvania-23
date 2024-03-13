@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=17 format=3 uid="uid://xshrt7d12xc6"]
+[gd_resource type="SpriteFrames" load_steps=15 format=3 uid="uid://xshrt7d12xc6"]
 
 [ext_resource type="Texture2D" uid="uid://dk4po40sptwdr" path="res://Art/mc sprites/robot sprite sheet.png" id="2_88du7"]
 
@@ -17,14 +17,6 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fo687"]
 atlas = ExtResource("2_88du7")
 region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pgiod"]
-atlas = ExtResource("2_88du7")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ccle"]
-atlas = ExtResource("2_88du7")
-region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ntwd"]
 atlas = ExtResource("2_88du7")
@@ -83,12 +75,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pgiod")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ccle")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_2ntwd")
 }, {
 "duration": 1.0,
@@ -105,7 +91,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 10.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,

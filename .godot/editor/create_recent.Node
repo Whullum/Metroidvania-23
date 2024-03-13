@@ -1,3 +1,8 @@
+AudioStreamPlayer2D
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+Node2D
 AnimatedSprite2D
 Timer
 AnimationPlayer
@@ -8,7 +13,3 @@ Panel
 Control
 NinePatchRect
 VBoxContainer
-VSeparator
-HSeparator
-Label
-TextureRect
