@@ -9,7 +9,8 @@ signal start_game()
 
 func _ready() -> void:
 	focus_button()
-	Global._play_main_menu()
+	if !Global.main_menu_audio.playing:
+		Global._play_main_menu()
 
 func _on_start_game_button_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)

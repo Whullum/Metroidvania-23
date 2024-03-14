@@ -106,7 +106,16 @@ text = "Press 'SPACE' again in the air
 to double jump"
 horizontal_alignment = 1
 
+[node name="TutorialText3" parent="." instance=ExtResource("11_0m3t0")]
+
 [node name="TutorialText" parent="." instance=ExtResource("11_0m3t0")]
 
+[node name="Node2D" parent="TutorialText" index="0"]
+position = Vector2(0, 32)
+
+[node name="Label" parent="TutorialText/Node2D" index="1"]
+text = "Use 'WASD' to move"
+
 [editable path="TutorialText2"]
+[editable path="TutorialText3"]
 [editable path="TutorialText"]
