@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://tyafu3ahtbak"]
+[gd_scene load_steps=24 format=3 uid="uid://tyafu3ahtbak"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_yr8x4"]
 [ext_resource type="SpriteFrames" uid="uid://xshrt7d12xc6" path="res://Scenes/Prefabs/Player/player_animations.tres" id="2_57y7f"]
@@ -6,12 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://bq0t2bdvmqqnk" path="res://Art/mc sprites/robot attack-Sheet.png" id="4_5ebql"]
 [ext_resource type="Texture2D" uid="uid://b4pvytost14tn" path="res://Art/mc sprites/shovel attack-Sheet.png" id="4_y7405"]
 [ext_resource type="Texture2D" uid="uid://maj3iequ3l8s" path="res://Art/mc sprites/watering can.png" id="6_snend"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
-radius = 24.3311
+[ext_resource type="AudioStream" uid="uid://b7e32rar3ah4s" path="res://Audio/PlayerDamaged.wav" id="7_de4hb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3xuw"]
 size = Vector2(7, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn5aj"]
+radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnwei"]
 size = Vector2(9.09091, 10.3896)
@@ -99,19 +100,19 @@ collision_mask = 325
 script = ExtResource("1_yr8x4")
 speed = 180.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_f3xuw")
+
 [node name="CollectionHitbox" type="Area2D" parent="."]
-position = Vector2(1, -4)
+position = Vector2(1, -7)
 scale = Vector2(2, 2)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionHitbox"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_dn5aj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(2, 2)
-shape = SubResource("RectangleShape2D_f3xuw")
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
 position = Vector2(1, 0)
@@ -126,7 +127,6 @@ shape = SubResource("RectangleShape2D_wnwei")
 
 [node name="InteractableHitbox" type="Area2D" parent="."]
 position = Vector2(1, -4)
-scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 64
 
@@ -210,8 +210,8 @@ remote_path = NodePath("../PlayerCamera")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = ExtResource("2_57y7f")
-animation = &"jump"
-frame = 4
+animation = &"death"
+frame = 8
 frame_progress = 1.0
 offset = Vector2(-1, -8)
 
@@ -232,6 +232,11 @@ animation = &"attack"
 visible = false
 position = Vector2(20, 1)
 texture = ExtResource("6_snend")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_de4hb")
+volume_db = -12.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_entered"]
 [connection signal="area_exited" from="CollectionHitbox" to="." method="_on_collection_hitbox_area_exited"]

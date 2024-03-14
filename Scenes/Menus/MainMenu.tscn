@@ -139,8 +139,9 @@ text = "Quit"
 icon = ExtResource("3_q3rk0")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
 stream = ExtResource("6_ni575")
-autoplay = true
+bus = &"Music"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/ButtonsVBox/Button_StartGame" to="." method="_on_start_game_button_pressed"]

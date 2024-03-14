@@ -127,7 +127,7 @@ animations = [{
 }]
 
 [node name="PatrolEnemy" type="CharacterBody2D"]
-collision_layer = 4
+collision_layer = 5
 collision_mask = 2
 script = ExtResource("1_s74vl")
 maximum_patrol_distance = 300.0

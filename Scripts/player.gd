@@ -57,6 +57,7 @@ func _physics_process(delta):
 		#$PlayerSprite.play("jump")
 
 	if player_stats.player_health <= 0:
+		$PlayerHitbox/CollisionShape2D.disabled = true
 		# Go to game over screen
 		return
 
@@ -66,7 +67,7 @@ func _physics_process(delta):
 		$ShovelSprite.visible = false
 		
 	if is_on_floor() or is_climbing:
-		has_double_jump = true
+		has_double_jump = true 
 		
 	# Handle melee attacks
 	# !! WILL NEED TO CHANGE WITH KEYFRAMES ONCE ANIMATIONS GET IN !!
@@ -100,7 +101,7 @@ func _physics_process(delta):
 		$ShovelSprite.play("shovel")
 		
 	# Handle ground pound action
-	if Input.is_action_just_pressed("dig_action") and !is_on_floor():
+	if (Input.is_action_just_pressed("dig_action") or Input.is_action_just_pressed("down")) and !is_on_floor():
 		$GroundPoundHitbox/GroundPoundCollisionShape2D.disabled = false
 		$PlayerSprite.visible = false
 		$ShovelSprite.visible = true
@@ -238,8 +239,13 @@ func _take_damage(damage_amount: int):
 	current_health = player_stats.player_health
 	player_take_damage.emit()
 	
+	$AudioStreamPlayer2D.play()
+	
 	if current_health <= 0:
-		print_debug("Game Over")
+		$PlayerSprite.play("death")
+		await $PlayerSprite.animation_finished
+		await get_tree().create_timer(1.0).timeout
+		Global._go_to_gameover()
 	pass
 
 func _on_collection_hitbox_area_entered(area):

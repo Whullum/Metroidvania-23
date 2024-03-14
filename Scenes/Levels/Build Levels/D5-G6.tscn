@@ -83,12 +83,12 @@ offset_bottom = 304.0
 scale = Vector2(6.70543, 1.4093)
 
 [node name="Label" parent="TutorialText2/Node2D" index="1"]
-offset_left = 44.0
+offset_left = 40.0
 offset_top = 264.0
-offset_right = 266.0
+offset_right = 285.0
 offset_bottom = 313.0
 text = "Press 'L' to dig
-Press 'L' in air to air attack"
+Press 'L' or 'S' in air to air attack"
 horizontal_alignment = 1
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]

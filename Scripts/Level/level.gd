@@ -16,6 +16,7 @@ func _ready():
 	$Player.player_take_damage.connect(_on_player_take_damage)
 	$Player.player_used_water.connect(_on_water_number_updated)
 		
+		
 func _on_door_player_entered(connectingScene, connecting_door):
 	_store_door_data(connecting_door)
 	get_tree().change_scene_to_file(connectingScene)
@@ -54,9 +55,9 @@ func _on_player_take_damage():
 		$Player/HUD/CanvasLayer/MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Health/HBoxContainer2/HBoxContainer/Health5/HealthFull.visible = false
 		pass
 	
-	if  GlobalPlayerStats.player_health <= 0:
-		Global._go_to_gameover()
-		pass
+	#if  GlobalPlayerStats.player_health <= 0:
+		#Global._go_to_gameover()
+		#pass
 	pass
 
 func _on_dig_site_coin_spawned():
